@@ -1,0 +1,95 @@
+// Variable overrides first
+$primary: #900;
+$enable-shadows: true;
+$prefix: "mo-";
+
+th{
+    white-space:nowrap;
+}
+
+.input[id='today-date']{
+    font-size:0.7rem !important;
+}
+
+@media only screen and (min-width:1800px){
+    *{
+        font-size:1.4vw !important;
+    }
+
+    body{
+        &>section{
+            &>div{
+                min-width: 90vw;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:1199.98px){
+    *{
+        font-size:large !important;
+    }
+}
+
+@media only screen and (max-width:767.98px){
+    *{
+        font-size: 1rem !important;
+    }
+
+    .tabla{
+        font-size:medium !important;
+    }
+}
+
+@media only screen and (max-width:575.98px){
+    *{
+        font-size: 0.9rem !important;
+    }
+
+    body{
+        &>.section{
+            padding: 0 !important;
+            margin: 0 !important;
+
+            &>div{
+                width: 100vw !important;
+                padding:10px !important;
+                margin: 0 !important;
+            }
+        }
+    }
+
+    .tabla{
+        padding:0 !important;
+        margin: 0 !important;
+    }
+
+    body .form{
+        padding:10px !important;
+                
+
+        &>div{
+            flex-direction: column;
+
+            & .label{
+                margin:5px;
+            }
+
+            & .input, div>.input{
+                width:100% !important;
+                margin-bottom:15px;
+            }
+        }
+    }    
+}
+
+@media only screen and (max-width:400px){
+    *{
+        font-size: 0.8rem !important;
+    }
+
+    body>section.p-5, body>section .p-5{
+        padding:9px !important;
+    }
+}
+

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costos Matias</title>
+
+    <script>
+        window.onload = ()=> {
+            console.log("pizzaPolloPuerro")
+            const sobreFermento = 122
+            const harinaKg = 332
+            const margarinaKg = 1700
+            const condimentos = 35
+            const mostazaChorro = 45
+            const ketchupChorro = 40
+            const aceiteMolde = 40
+            const aceiteCocina = 50
+            const gas = 110
+            const embalajesPizza = 100
+            const embalajePan = 60
+            const lecheLitro = 3550 / 12
+            const cremaLecheKg = (1000 * 550) / 350
+
+            const cebollaKg = 200
+            const ajoDiente = 130 / 10
+            const pimientoRojo = 650
+            const pimientoVerde = 535
+            const aji = 750 / 10
+            const verdeoKg = 1000
+            const puerroKg = 1000
+            const mandioca = 0
+            const perejilPizca = 60
+            const tomateKg = 650
+            const brocolis = 860
+            const limonGotas = 15
+            const huevo = 40
+
+            const cuartirolo = 1660
+            const requeijaoKg = (1230 / 3) / 2
+            const sardo = 2330
+            const roquefortKg = 2550
+            const quesoRalladoChicoPizca = 240 / 10
+            const bacon = 3800
+
+            const aceitunasUn = 230 / 20
+            const arvejasMediaLata = 160 / 2
+            const chocloLata = 350
+            const papasPay = 2000
+
+            const patamusloKg = 530 * 2
+            const jamonKg = 780
+
+            /*---*/
+            const masaPizza = sobreFermento + (harinaKg/3) + (margarinaKg * 0.040);
+            const masaPanes = sobreFermento + (harinaKg/2) + 40;
+            const aceite = aceiteCocina + aceiteMolde;
+            
+            const fijosPizza = masaPizza + aceite + gas + embalajesPizza;
+            const fijosPan = masaPanes + aceite + gas + embalajePan
+            const bechamel4Quesos = 
+                //aceite va en la receta en vez de aca
+                (harinaKg * 0.050) +
+                (lecheLitro * 0.500) +
+                ajoDiente +
+                condimentos;
+
+            /*---*/
+
+            //Pizza Pollo al Puerro
+            const pizzaPolloPuerro = 
+                fijosPizza + 
+                (patamusloKg * 0.500) +
+                (cebollaKg * 0.100) +
+                ajoDiente + 
+                (puerroKg * 0.100) +
+                (bacon * 0.020) +
+                (cremaLecheKg * 0.080) +
+                (condimentos + 10) +
+                mostazaChorro +
+                limonGotas + 
+                (cuartirolo * 0.200);
+
+            const pizzaPortuguesa = 
+                fijosPizza +
+                (cebollaKg * 0.100) + 
+                (cebollaKg * 0.100) + 
+                (pimientoRojo * 0.040) + 
+                (tomateKg * 0.160) +
+                (jamonKg * 0.150) +
+                (cuartirolo * 0.200) +
+                quesoRalladoChicoPizca +
+                (bacon * 0.015) +
+                (huevo * 2) +
+                arvejasMediaLata +
+                (verdeoKg * 0.050) +
+                (condimentos + 10);
+
+            const pizzaBrocoliBacon = 
+                fijosPizza +
+                condimentos +
+                (bacon * 0.080) +
+                (cuartirolo * 0.300) +
+                brocolis +
+                (ajoDiente * 2) +
+                (requeijaoKg * 0.050);
+
+            const pizzaFugazzetaCaramelizada = 
+                fijosPizza +
+                condimentos +
+                (cebollaKg * 0.300) +
+                (cuartirolo * 0.250) +
+                (bacon * 0.015) +
+                ajoDiente +
+                (requeijaoKg * 0.060);
+
+            const pizzaPolloCriolla = 
+                fijosPizza +
+                condimentos +
+                (patamusloKg * 0.550) +
+                (bacon * 0.025) +
+                (cebollaKg * 0.200) +
+                (pimientoRojo * 0.050) + 
+                (ajoDiente * 2) +
+                mostazaChorro +
+                limonGotas +
+                (cremaLecheKg * 0.070) +
+                perejilPizca +
+                (requeijaoKg * 0.050) +
+                (cuartirolo * 0.200);
+
+            const pizzaStrogonoffPollo = 
+                fijosPizza +
+                condimentos +
+                (patamusloKg * 0.540) +
+                (bacon * 0.025) +
+                (cebollaKg * 0.200) +
+                (pimientoRojo * 0.050) +
+                (ajoDiente * 2) +
+                mostazaChorro +
+                limonGotas +
+                (cremaLecheKg * 0.120) +
+                (verdeoKg * 0.050) +
+                (sardo * 0.030) +
+                (papasPay * 0.070) +
+                (cuartirolo * 0.200);
+
+
+            const pizzaCaipira = 
+                fijosPizza +
+                condimentos +
+                (patamusloKg * 0.260) +
+                (bacon * 0.080) +
+                (cebollaKg * 0.080) +
+                chocloLata +
+                (requeijaoKg * 0.080) +
+                (cuartirolo * 0.200);
+
+            const pizzaCarbonara = 
+                fijosPizza +
+                condimentos +
+                (bacon * 0.125) +
+                ajoDiente +
+                (sardo * 0.020) +
+                (huevo * 2) +
+                (cuartirolo * 0.250) +
+                (requeijaoKg * 0.050);
+
+            const pizzaBaconProvenzal =
+                fijosPizza + 
+                condimentos +
+                (bacon * 0.125) +
+                ajoDiente +
+                (sardo * 0.020) +
+                (roquefortKg * 0.020) +
+                quesoRalladoChicoPizca +
+                (aji * 0.050) +
+                mostazaChorro +
+                limonGotas +
+                perejilPizca +
+                (cuartirolo * 0.250) +
+                (requeijaoKg * 0.050);
+
+            const panHumita = 
+                fijosPan +
+                chocloLata +
+                (lecheLitro * 0.500) +
+                (bacon * 0.040) + 
+                (verdeoKg * 0.050) +
+                (cremaLecheKg * 0.020) +
+                (cuartirolo * 0.050) +
+                (cebollaKg * 0.070) +
+                (pimientoRojo * 0.060) +
+                ajoDiente +
+                (condimentos + 10)
+
+            const panHumitaVeggie = 
+                panHumita; /*averiguar precios*/
+
+            const pan4QuesosSardo =
+                fijosPan +
+                bechamel4Quesos +
+                (cuartirolo * 0.200) +
+                (sardo * 0.120) +
+                (roquefortKg * 0.050) +
+                (requeijaoKg * 0.100);
+
+            const pan4QuesosRoquefort =
+                fijosPan +
+                bechamel4Quesos +
+                (cuartirolo * 0.200) +
+                (sardo * 0.050) +
+                (roquefortKg * 0.120) +
+                (requeijaoKg * 0.100);
+
+            const pan4QuesosBaconProvenzal = 
+                pan4QuesosRoquefort +
+                (bacon * 0.100) +
+                ajoDiente +
+                perejilPizca +
+                limonGotas +
+                mostazaChorro +
+                (condimentos + 10)
+
+            const panFricassePollo =
+                fijosPan +
+                (bacon * 0.030) +
+                (patamusloKg * 0.500) +
+                limonGotas +
+                (cebollaKg * 0,100) +
+                (ajoDiente * 2) +
+                (aceitunasUn * 4) +
+                (sardo * 0.050) +
+                (requeijaoKg * 0.100) +
+                (lecheLitro * 0.400) +
+                chocloLata +
+                (condimentos + 10) +
+                (papasPay * 0.070)
+
+            const panStrogonoffPollo = 
+                fijosPan +
+                (patamusloKg * 0.500) +
+                limonGotas +
+                (bacon * 0.030) +
+                (cebollaKg * 0,100) +
+                (ajoDiente * 2) +
+                (tomateKg * 0.080) +
+                (verdeoKg * 0.050) +
+                mostazaChorro +
+                ketchupChorro +
+                (cremaLecheKg * 0.200) +
+                (lecheLitro * 0.250) +
+                (condimentos + 10) +
+                (papasPay * 0.070)
+            
+            let a = document.querySelector("#pizza-pollo-puerro")
+            let b = document.querySelector("#pizza-portuguesa")
+            let c = document.querySelector("#pizza-brocoli-bacon")
+            let d = document.querySelector("#pizza-fugazetta-caramelizada")
+            let e = document.querySelector("#pizza-pollo-criolla")
+            let f = document.querySelector("#pizza-strogonoff-pollo")
+            let g = document.querySelector("#pizza-caipira")
+            let h = document.querySelector("#pizza-carbonara")
+            let i = document.querySelector("#pizza-bacon-provenzal")
+            let j = document.querySelector("#pan-humita")
+            let k = document.querySelector("#pan-humita-veggie")
+            let l = document.querySelector("#pan-4quesos-sardo")
+            let m = document.querySelector("#pan-4quesos-roquefort")
+            let n = document.querySelector("#pan-4quesos-bacon-provenzal")
+            let o = document.querySelector("#pan-fricasse-pollo")
+            let p = document.querySelector("#pan-strogonoff-pollo")
+            a.innerHTML = Math.floor(pizzaPolloPuerro + 1100).toString()
+            b.innerHTML = Math.floor(pizzaPortuguesa + 1150).toString()
+            c.innerHTML = Math.floor(pizzaBrocoliBacon + 1100).toString()
+            d.innerHTML = Math.floor(pizzaFugazzetaCaramelizada + 1200).toString()
+            e.innerHTML = Math.floor(pizzaPolloCriolla + 1100).toString()
+            f.innerHTML = Math.floor(pizzaStrogonoffPollo + 1100).toString()
+            g.innerHTML = Math.floor(pizzaCaipira + 1100).toString()
+            h.innerHTML = Math.floor(pizzaCarbonara + 1100).toString()
+            i.innerHTML = Math.floor(pizzaBaconProvenzal + 1200).toString()
+
+            j.innerHTML = Math.floor(panHumita + 1650).toString()
+            k.innerHTML = Math.floor(panHumitaVeggie + 1650).toString()
+            l.innerHTML = Math.floor(pan4QuesosSardo + 1750).toString()
+            m.innerHTML = Math.floor(pan4QuesosRoquefort + 1750).toString()
+            n.innerHTML = Math.floor(pan4QuesosBaconProvenzal + 1500).toString()
+            o.innerHTML = Math.floor(panFricassePollo + 1200).toString()
+            p.innerHTML = Math.floor(panStrogonoffPollo + 1200).toString()
+        }
+    </script>
+</head>
+
+<body>
+    <p>COSTOS</p>
+    <p>Pizza Pollo al Puerro: <strong id="pizza-pollo-puerro"></strong></p>
+    <p>Pizza Portuguesa: <strong id="pizza-portuguesa"></strong></p>
+    <p>Pizza Brocoli con Bacon: <strong id="pizza-brocoli-bacon"></strong></p>
+    <p>Pizza Fugazzeta Caramelizada: <strong id="pizza-fugazetta-caramelizada"></strong></p>
+    <p>Pizza Pollo a la Criolla: <strong id="pizza-pollo-criolla"></strong></p>
+    <p>Pizza Strogonoff de Pollo: <strong id="pizza-strogonoff-pollo"></strong></p>
+    <p>Pizza Caipira: <strong id="pizza-caipira"></strong></p>
+    <p>Pizza Carbonara: <strong id="pizza-carbonara"></strong></p>
+    <p>Pizza Bacon a la Provenzal: <strong id="pizza-bacon-provenzal"></strong></p>
+    <p>---------</p>
+    <p>Pan Italiano Humita: <strong id="pan-humita"></strong></p>
+    <p>Pan Italiano Humita Veggie: <strong id="pan-humita-veggie"></strong></p>
+    <p>Pan Italiano 4 Quesos con Sardo: <strong id="pan-4quesos-sardo"></strong></p>
+    <p>Pan Italiano 4 Quesos con Roquefort: <strong id="pan-4quesos-roquefort"></strong></p>
+    <p>Pan Italiano 4 Quesos con Bacon a la Provenzal: <strong id="pan-4quesos-bacon-provenzal"></strong></p>
+    <p>Pan Italiano Fricasse de Pollo: <strong id="pan-fricasse-pollo"></strong></p>
+    <p>Pan Italiano Strogonoff de Pollo: <strong id="pan-strogonoff-pollo"></strong></p>
+</body>
+</html>

@@ -1,0 +1,344 @@
+[
+    {
+        "ingrediente": "Harina 000",
+        "marca": "Pureza",
+        "precio": 332.01,
+        "unidad_medida": "Kilo",
+        "categoria": "Almacen",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Fermento sobrecito",
+        "marca": "Levex",
+        "precio": 122.01,
+        "unidad_medida": "Unidad",
+        "categoria": "Almacen",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Mostaza chorro",
+        "marca": "Natura",
+        "precio": 45.01,
+        "unidad_medida": "Chorro",
+        "categoria": "Almacen",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Ketchup",
+        "marca": "Natura",
+        "precio": 40.01,
+        "unidad_medida": "Chorro",
+        "categoria": "Almacen",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Margarina",
+        "marca": "?",
+        "precio": 1700.01,
+        "unidad_medida": "Kilo",
+        "categoria": "Almacen",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Condimentos",
+        "marca": "?",
+        "precio": 35.01,
+        "unidad_medida": "Pizca",
+        "categoria": "Almacen",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Aceite para molde",
+        "marca": "?",
+        "precio": 40.01,
+        "unidad_medida": "Chorro",
+        "categoria": "Almacen",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Aceite para cocinar",
+        "marca": "?",
+        "precio": 50.01,
+        "unidad_medida": "Chorro",
+        "categoria": "Almacen",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Gas",
+        "marca": "?",
+        "precio": 110.01,
+        "unidad_medida": "Unidad",
+        "categoria": "Energeticos",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Embalaje para pizza de 8 pociones",
+        "marca": "?",
+        "precio": 100.01,
+        "unidad_medida": "Unidad",
+        "categoria": "Embalajes",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Embalajes para pan italiano",
+        "marca": "?",
+        "precio": 60.01,
+        "unidad_medida": "Unidad",
+        "categoria": "Embalajes",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Leche cajita",
+        "marca": "Ilolay",
+        "precio": 295.83,
+        "unidad_medida": "Litro",
+        "categoria": "Lacteos",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Crema de leche",
+        "marca": "Ilolay",
+        "precio": 1571.42,
+        "unidad_medida": "Kilo",
+        "categoria": "Lacteos",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Cebolla",
+        "marca": "?",
+        "precio": 200.01,
+        "unidad_medida": "Kilo",
+        "categoria": "Verduleria",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Ajo diente",
+        "marca": "?",
+        "precio": 13.01,
+        "unidad_medida": "Unidad",
+        "categoria": "Verduleria",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Pimiento Rojo",
+        "marca": "?",
+        "precio": 650.01,
+        "unidad_medida": "Kilo",
+        "categoria": "Verduleria",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Pimiento Verde",
+        "marca": "?",
+        "precio": 535.01,
+        "unidad_medida": "Kilo",
+        "categoria": "Verduleria",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Aji",
+        "marca": "?",
+        "precio": 750.01,
+        "unidad_medida": "Kilo",
+        "categoria": "Verduleria",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Verdeo",
+        "marca": "?",
+        "precio": 1000.01,
+        "unidad_medida": "Kilo",
+        "categoria": "Verduleria",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Puerro",
+        "marca": "?",
+        "precio": 1000.01,
+        "unidad_medida": "Kilo",
+        "categoria": "Verduleria",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Mandioca",
+        "marca": "?",
+        "precio": 0.01,
+        "unidad_medida": "Kilo",
+        "categoria": "Verduleria",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Perejil picado",
+        "marca": "?",
+        "precio": 60.01,
+        "unidad_medida": "Pizca",
+        "categoria": "Verduleria",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Tomate",
+        "marca": "?",
+        "precio": 650.01,
+        "unidad_medida": "Kilo",
+        "categoria": "Verduleria",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Brocolis",
+        "marca": "?",
+        "precio": 860.01,
+        "unidad_medida": "Unidad",
+        "categoria": "Verduleria",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Limon gotas",
+        "marca": "?",
+        "precio": 15.01,
+        "unidad_medida": "Gotas",
+        "categoria": "Verduleria",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Huevo",
+        "marca": "?",
+        "precio": 40.01,
+        "unidad_medida": "Unidad",
+        "categoria": "Carniceria",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Queso cuartirolo",
+        "marca": "Ilolay",
+        "precio": 1660.01,
+        "unidad_medida": "Kilo",
+        "categoria": "Lacteos",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Queso untable - Requeijao",
+        "marca": "Ilolay",
+        "precio": 410.01,
+        "unidad_medida": "Pote",
+        "categoria": "Lacteos",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Queso sardo",
+        "marca": "Brescia lat",
+        "precio": 2330.01,
+        "unidad_medida": "Kilo",
+        "categoria": "Lacteos",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Queso roquefort",
+        "marca": "Brescia lat",
+        "precio": 2550.01,
+        "unidad_medida": "Kilo",
+        "categoria": "Lacteos",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Queso rallado chico - pizca",
+        "marca": "Ilolay",
+        "precio": 25.01,
+        "unidad_medida": "Pizca",
+        "categoria": "Lacteos",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Bacon",
+        "marca": "?",
+        "precio": 3800.01,
+        "unidad_medida": "Kilo",
+        "categoria": "Fiambres",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Aceituna, unica, unidad",
+        "marca": "?",
+        "precio": 11.50,
+        "unidad_medida": "",
+        "categoria": "",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Arvejas",
+        "marca": "?",
+        "precio": 160.01,
+        "unidad_medida": "Lata",
+        "categoria": "Almacen",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Choco amarillo en granos",
+        "marca": "?",
+        "precio": 350.01,
+        "unidad_medida": "Lata",
+        "categoria": "Almacen",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Papas pay",
+        "marca": "Cracket",
+        "precio": 2000.01,
+        "unidad_medida": "Kilo",
+        "categoria": "Almacen",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Patamuslo de pollo",
+        "marca": "?",
+        "precio": 530.01,
+        "unidad_medida": "Kilo",
+        "categoria": "Carniceria",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    },
+    {
+        "ingrediente": "Jamon cocido",
+        "marca": "?",
+        "precio": 780.01,
+        "unidad_medida": "Kilo",
+        "categoria": "Fiambres",
+        "ultima_modificacion": "22/09/2023",
+        "autor": "Matias"
+    }   
+]

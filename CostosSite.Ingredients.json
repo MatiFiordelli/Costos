@@ -1,0 +1,456 @@
+[{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19da"
+  },
+  "ingrediente": "harina 000",
+  "marca": "pureza",
+  "precio": 332.01,
+  "unidad_medida": "kilo",
+  "categoria": "almacen",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19db"
+  },
+  "ingrediente": "fermento sobrecito",
+  "marca": "levex",
+  "precio": 122.01,
+  "unidad_medida": "unidad",
+  "categoria": "almacen",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19dc"
+  },
+  "ingrediente": "mostaza chorro",
+  "marca": "natura",
+  "precio": 45.01,
+  "unidad_medida": "chorro",
+  "categoria": "almacen",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19dd"
+  },
+  "ingrediente": "ketchup",
+  "marca": "natura",
+  "precio": 40.01,
+  "unidad_medida": "chorro",
+  "categoria": "almacen",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19de"
+  },
+  "ingrediente": "margarina",
+  "marca": "?",
+  "precio": 1700.01,
+  "unidad_medida": "kilo",
+  "categoria": "almacen",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19df"
+  },
+  "ingrediente": "condimentos",
+  "marca": "?",
+  "precio": 35.01,
+  "unidad_medida": "pizca",
+  "categoria": "almacen",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19e0"
+  },
+  "ingrediente": "aceite para molde",
+  "marca": "?",
+  "precio": 40.01,
+  "unidad_medida": "chorro",
+  "categoria": "almacen",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19e1"
+  },
+  "ingrediente": "aceite para cocinar",
+  "marca": "?",
+  "precio": 50.01,
+  "unidad_medida": "chorro",
+  "categoria": "almacen",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19e2"
+  },
+  "ingrediente": "gas",
+  "marca": "?",
+  "precio": 110.01,
+  "unidad_medida": "unidad",
+  "categoria": "energeticos",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19e3"
+  },
+  "ingrediente": "embalaje para pizza de 8 pociones",
+  "marca": "?",
+  "precio": 100.01,
+  "unidad_medida": "unidad",
+  "categoria": "embalajes",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19e4"
+  },
+  "ingrediente": "embalajes para pan italiano",
+  "marca": "?",
+  "precio": 60.01,
+  "unidad_medida": "unidad",
+  "categoria": "embalajes",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19e5"
+  },
+  "ingrediente": "leche cajita",
+  "marca": "ilolay",
+  "precio": 295.83,
+  "unidad_medida": "litro",
+  "categoria": "lacteos",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19e6"
+  },
+  "ingrediente": "crema de leche",
+  "marca": "ilolay",
+  "precio": 1571.42,
+  "unidad_medida": "kilo",
+  "categoria": "lacteos",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19e7"
+  },
+  "ingrediente": "cebolla",
+  "marca": "?",
+  "precio": 200.01,
+  "unidad_medida": "kilo",
+  "categoria": "verduleria",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19e8"
+  },
+  "ingrediente": "ajo diente",
+  "marca": "?",
+  "precio": 13.01,
+  "unidad_medida": "unidad",
+  "categoria": "verduleria",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19e9"
+  },
+  "ingrediente": "pimiento Rojo",
+  "marca": "?",
+  "precio": 650.01,
+  "unidad_medida": "kilo",
+  "categoria": "verduleria",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19ea"
+  },
+  "ingrediente": "pimiento Verde",
+  "marca": "?",
+  "precio": 535.01,
+  "unidad_medida": "kilo",
+  "categoria": "verduleria",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19eb"
+  },
+  "ingrediente": "aji",
+  "marca": "?",
+  "precio": 750.01,
+  "unidad_medida": "kilo",
+  "categoria": "verduleria",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19ec"
+  },
+  "ingrediente": "verdeo",
+  "marca": "?",
+  "precio": 1000.01,
+  "unidad_medida": "kilo",
+  "categoria": "verduleria",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19ed"
+  },
+  "ingrediente": "puerro",
+  "marca": "?",
+  "precio": 1000.01,
+  "unidad_medida": "kilo",
+  "categoria": "verduleria",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19ee"
+  },
+  "ingrediente": "mandioca",
+  "marca": "?",
+  "precio": 0.01,
+  "unidad_medida": "kilo",
+  "categoria": "verduleria",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19ef"
+  },
+  "ingrediente": "perejil picado",
+  "marca": "?",
+  "precio": 60.01,
+  "unidad_medida": "pizca",
+  "categoria": "verduleria",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19f0"
+  },
+  "ingrediente": "tomate",
+  "marca": "?",
+  "precio": 650.01,
+  "unidad_medida": "kilo",
+  "categoria": "verduleria",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19f1"
+  },
+  "ingrediente": "brocolis",
+  "marca": "?",
+  "precio": 860.01,
+  "unidad_medida": "unidad",
+  "categoria": "verduleria",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19f2"
+  },
+  "ingrediente": "limon gotas",
+  "marca": "?",
+  "precio": 15.01,
+  "unidad_medida": "gotas",
+  "categoria": "verduleria",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19f3"
+  },
+  "ingrediente": "huevo",
+  "marca": "?",
+  "precio": 40.01,
+  "unidad_medida": "unidad",
+  "categoria": "carniceria",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19f4"
+  },
+  "ingrediente": "queso cuartirolo",
+  "marca": "ilolay",
+  "precio": 1660.01,
+  "unidad_medida": "kilo",
+  "categoria": "lacteos",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19f5"
+  },
+  "ingrediente": "queso untable - requeijao",
+  "marca": "ilolay",
+  "precio": 2160.01,
+  "unidad_medida": "kilo",
+  "categoria": "lacteos",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19f6"
+  },
+  "ingrediente": "queso sardo",
+  "marca": "brescia lat",
+  "precio": 2330.01,
+  "unidad_medida": "kilo",
+  "categoria": "lacteos",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19f7"
+  },
+  "ingrediente": "queso roquefort",
+  "marca": "brescia lat",
+  "precio": 2550.01,
+  "unidad_medida": "kilo",
+  "categoria": "lacteos",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19f8"
+  },
+  "ingrediente": "queso rallado chico - pizca",
+  "marca": "ilolay",
+  "precio": 25.01,
+  "unidad_medida": "pizca",
+  "categoria": "lacteos",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19f9"
+  },
+  "ingrediente": "bacon",
+  "marca": "?",
+  "precio": 3800.01,
+  "unidad_medida": "kilo",
+  "categoria": "fiambres",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19fa"
+  },
+  "ingrediente": "aceituna, unica, unidad",
+  "marca": "?",
+  "precio": 11.5,
+  "unidad_medida": "unidad",
+  "categoria": "almacen",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19fb"
+  },
+  "ingrediente": "arvejas",
+  "marca": "?",
+  "precio": 160.01,
+  "unidad_medida": "lata",
+  "categoria": "almacen",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19fc"
+  },
+  "ingrediente": "choco amarillo en granos",
+  "marca": "?",
+  "precio": 350.01,
+  "unidad_medida": "lata",
+  "categoria": "almacen",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19fd"
+  },
+  "ingrediente": "papas pay",
+  "marca": "cracket",
+  "precio": 2000.01,
+  "unidad_medida": "kilo",
+  "categoria": "almacen",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19fe"
+  },
+  "ingrediente": "patamuslo de pollo",
+  "marca": "?",
+  "precio": 530.01,
+  "unidad_medida": "kilo",
+  "categoria": "carniceria",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+},
+{
+  "_id": {
+    "$oid": "650e21f037f9ab45dccb19ff"
+  },
+  "ingrediente": "jamon cocido",
+  "marca": "?",
+  "precio": 780.01,
+  "unidad_medida": "kilo",
+  "categoria": "fiambres",
+  "ultima_modificacion": "22/09/2023",
+  "autor": "matias"
+}]

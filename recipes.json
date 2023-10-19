@@ -1,0 +1,261 @@
+[
+    {
+        "autor": "Matias",
+        "nombre": "Pan Italiano de 4 quesos con Sardo",
+        "ultima_modificacion": "23/9/2023",
+        "categoria": "Panes",
+        "costo": 0.01,
+        "receta": [
+            {
+                "codigo":"650e21f037f9ab45dccb19da",
+                "ingrediente": "Harina 000",
+                "cantidad": 0.550
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19db",
+                "ingrediente": "Fermento sobrecito",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e0",
+                "ingrediente": "Aceite para molde",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e1",
+                "ingrediente": "Aceite para cocinar",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e2",
+                "ingrediente": "Gas",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e4",
+                "ingrediente": "Embalajes para pan italiano",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e4",
+                "ingrediente": "Embalajes para pan italiano",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e5",
+                "ingrediente": "Leche cajita",
+                "cantidad": 0.500
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e8",
+                "ingrediente": "Ajo diente",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19df",
+                "ingrediente": "Condimentos",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19f4",
+                "ingrediente": "Queso cuartirolo",
+                "cantidad": 0.200
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19f6",
+                "ingrediente": "Queso sardo",
+                "cantidad": 0.200
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19f7",
+                "ingrediente": "Queso roquefort",
+                "cantidad": 0.050
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19f5",
+                "ingrediente": "Queso untable - Requeijao",
+                "cantidad": 0.100
+            }
+        ]
+
+    },
+    {
+        "autor": "Matias",
+        "nombre": "Pan Italiano de 4 quesos con Roquefort",
+        "ultima_modificacion": "23/9/2023",
+        "categoria": "Panes",
+        "costo": 0.01,
+        "receta": [
+            {
+                "codigo":"650e21f037f9ab45dccb19da",
+                "ingrediente": "Harina 000",
+                "cantidad": 0.550
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19db",
+                "ingrediente": "Fermento sobrecito",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e0",
+                "ingrediente": "Aceite para molde",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e1",
+                "ingrediente": "Aceite para cocinar",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e2",
+                "ingrediente": "Gas",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e4",
+                "ingrediente": "Embalajes para pan italiano",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e4",
+                "ingrediente": "Embalajes para pan italiano",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e5",
+                "ingrediente": "Leche cajita",
+                "cantidad": 0.500
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e8",
+                "ingrediente": "Ajo diente",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19df",
+                "ingrediente": "Condimentos",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19f4",
+                "ingrediente": "Queso cuartirolo",
+                "cantidad": 0.200
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19f6",
+                "ingrediente": "Queso sardo",
+                "cantidad": 0.050
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19f7",
+                "ingrediente": "Queso roquefort",
+                "cantidad": 0.120
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19f5",
+                "ingrediente": "Queso untable - Requeijao",
+                "cantidad": 0.100
+            }
+        ]
+
+    },
+    {
+        "autor": "Matias",
+        "nombre": "Pan Italiano de 4 quesos con Bacon a la provenzal",
+        "ultima_modificacion": "23/9/2023",
+        "categoria": "Panes",
+        "costo": 0.01,
+        "receta": [
+            {
+                "codigo":"650e21f037f9ab45dccb19da",
+                "ingrediente": "Harina 000",
+                "cantidad": 0.550
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19db",
+                "ingrediente": "Fermento sobrecito",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e0",
+                "ingrediente": "Aceite para molde",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e1",
+                "ingrediente": "Aceite para cocinar",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e2",
+                "ingrediente": "Gas",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e4",
+                "ingrediente": "Embalajes para pan italiano",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e4",
+                "ingrediente": "Embalajes para pan italiano",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e5",
+                "ingrediente": "Leche cajita",
+                "cantidad": 0.500
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19e8",
+                "ingrediente": "Ajo diente",
+                "cantidad": 2.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19df",
+                "ingrediente": "Condimentos",
+                "cantidad": 1.5
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19f4",
+                "ingrediente": "Queso cuartirolo",
+                "cantidad": 0.200
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19f6",
+                "ingrediente": "Queso sardo",
+                "cantidad": 0.050
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19f7",
+                "ingrediente": "Queso roquefort",
+                "cantidad": 0.120
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19f5",
+                "ingrediente": "Queso untable - Requeijao",
+                "cantidad": 0.100
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19f9",
+                "ingrediente": "Bacon",
+                "cantidad": 0.100
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19dc",
+                "ingrediente": "Mostaza chorro",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19ef",
+                "ingrediente": "Perejil picado",
+                "cantidad": 1.01
+            },
+            {
+                "codigo":"650e21f037f9ab45dccb19f2",
+                "ingrediente": "Limon gotas",
+                "cantidad": 1.01
+            }
+        ]
+    }
+]

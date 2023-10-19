@@ -1,0 +1,46 @@
+deberia tener un boton deshacer en modificar receta
+en modificarreceta, mirar los onchange, corregir en funcion q ya existe creo y ver los otros!!!!! no esta cambiando la unidad de medida
+para modificaIngredientes, cada vez q se modifique algo, se va armando un objeto, en base a las id, modificar solo eso y el boton debe ser disabled hasta q se modifique algo
+corregir id o class de codigo / _id y reemplazar por _id_recipe y _id_ingredient o algo asi
+en modificar, poner la x para cerrar el modal y q al cerrar lo redirija a la raiz \
+los botones enviar de modificar(ambos) ver el disabled!!!
+hacer infinite scroll
+ver bien bien las fechas!!!
+en todos los findIngredientData() creo q el if no deberia ser con ingrediente sino con codigo!!!
+los titles deberian estar en los td en vez de en los form elements ver!!!
+
+corregir al ingles web y base de datos
+poner los fetchs apartes
+componentizar lo que falte
+hacer login para tener el autor
+poner spinners
+
+adding the project working, but with a lot of work and code reorganization to do. until now I just tried to use custom elements for the first time, but I forgot the fact of Encapsulation to make a proper and reusable Web Component
+
+oninput="console.log('[${Object.values(e)}'])"
+
+[    
+                                                e.ingrediente,
+                                                e.marca,
+                                                e.precio,
+                                                e.unidad_medida,
+                                                e.categoria,
+                                                e.ultima_modificacion,
+                                                e.autor,
+                                                e._id
+                                            ]
+
+
+oninput="onChangeValue('${{
+                                                ingredient: e.ingrediente,
+                                                trademark: e.marca,
+                                                price: e.precio,
+                                                measurement_unit: e.unidad_medida,
+                                                category: e.categoria,
+                                                today_date: e.ultima_modificacion,
+                                                autor: e.autor,
+                                                _id: e._id
+                                            }}')"                                            
+
+
+oninput="${onChangeValue(JSON.stringify(res[event.target.closest('tr').rowIndex]))}"                                             

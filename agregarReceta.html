@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Agregar recetas">
+    <title>Agregar receta</title>
+    <link href="./styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="./node_modules//bootstrap/dist/css/bootstrap.min.css" />
+	<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+	<script src="./node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+	<script src="./js/index.js" type="module"></script>
+	<script src="./js/agregarReceta.js" type="module"></script>
+	<script src="./js/functions.js" type="module"></script>
+</head>
+<body class="bg-black">
+	<menu-bar></menu-bar>
+    <section class="containe-fluid vh-auto d-flex justify-content-center align-items-center p-5  overflow-x-hidden">
+		<div class="container border border-dark rounded p-5 bg-light text-center ">
+			<form 
+				id="form" 
+				onsubmit="return false"
+			>
+				<div class="d-flex flex-column gap-sm-2 p-5 mb-2 border">
+					<div class="container d-flex justify-content-between p-0">
+						<label for="recipe-name" class="form-label text-dark">Nombre de la receta</label>
+						<input 
+							autofocus
+							type="text" 
+							title="Nombre de la receta"
+							id="recipe-name"
+							name="recipe_name"
+							class="form-control form-control-sm rounded w-50 border-secondary-subtle" 
+							placeholder="Pizza Fugazzeta, Empanadas Caprese, Sandwich de Milanesa.." 
+							required
+						>
+					</div>
+					<div class="container d-flex justify-content-between p-0 pb-4">
+						<label for="category" class="form-label text-dark">Categoria</label>
+						<select 
+							id="category"
+							name="category"
+							title="Categoria"
+							class="form-select form-select-sm rounded w-50 border-secondary-subtle" 
+							aria-label="Category"
+							required
+						> 
+							<option value="" selected>Elija la categoria</option>
+							<option value="Panes">Panes</option>
+							<option value="Pizzas">Pizzas</option>
+							<option value="Empanadas">Empanadas</option>
+							<option value="Canastitas">Canastitas</option>
+							<option value="Sandwichs">Sandwichs</option>
+							<option value="Papas">Papas</option>
+							<option value="Picadas">Picadas</option>
+							<option value="Platos">Platos</option>
+							<option value="Torres de panqueques">Torres de panqueques</option>
+							<option value="Pastas">Pastas</option>
+							<option value="Ensaladas">Ensaladas</option>
+							<option value="Parrilla u horno">Parrilla u horno</option>
+							<option value="Comida mexicana">Comida mexicana</option>
+							<option value="Comida brasilera">Comida brasilera</option>
+							<option value="Varios">Varios</option>
+						</select>
+					</div>
+					<div class="container d-flex justify-content-between p-0">
+						<label for="today-date" class="form-label text-black-50 fst-italic">Fecha de creacion</label>
+						<input 
+							type="text" 
+							title="Fecha de creacion"
+							id="today-date"
+							name="today_date"
+							class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none fst-italic text-black-50" 
+							placeholder="dd/mm/aaaa" 
+							required
+							readonly
+							tabindex="-1"
+						>
+					</div>
+					<div class="container d-flex justify-content-between p-0">
+						<label for="autor" class="form-label text-black-50 fst-italic">Autor</label>
+						<input 
+							type="text" 
+							title="Autor"
+							id="autor" 
+							name="autor" 
+							class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none fst-italic text-black-50" 
+							readonly
+							placeholder="Autor"
+							tabindex="-1"
+						>
+					</div>
+				</div>
+			
+				<div class="d-flex flex-column gap-sm-2 p-5 mb-5 border">
+					<div class="container d-flex justify-content-between p-0">
+						<label for="ingredient" class="form-label text-dark">Ingrediente</label>
+						<input 
+							autocomplete="off"
+							type="text" 
+							title="Ingrediente"
+							id="ingredient" 
+							class="form-control form-control-sm rounded w-50 border-secondary-subtle" 
+							list="list-options-ingredient"
+							placeholder="Elija el ingrediente" 
+							oninput="oninputAgregarRecetaIngrediente(event)"
+						>
+						<datalist 
+							id="list-options-ingredient"
+							aria-label="Nombre del ingrediente" 
+						>
+						</datalist>
+					</div>	
+					<div class="container d-flex justify-content-between p-0 pb-4">
+						<label for="quantity" class="form-label text-dark">Cantidad</label>
+						<input 
+							type="number" 
+							title="Cantidad"
+							id="quantity" 
+							class="form-control form-control-sm rounded w-50 border-secondary-subtle" 
+							placeholder="0" 
+							step="any"
+							min="0"
+							max="999"
+							onchange="onchangeAgregarRecetaCantidad(event)"
+							onkeyup="onchangeAgregarRecetaCantidad(event)"
+						>
+					</div>	
+					<div class="container d-flex justify-content-between p-0">
+						<label for="cost-value" class="form-label text-black-50 fst-italic">Valor de costo</label>
+						<input 
+							type="text" 
+							title="Valor de costo"
+							id="cost-value" 
+							class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none fst-italic text-black-50" 
+							readonly
+							placeholder="Costo"
+							tabindex="-1"
+						>
+					</div>	
+					<div class="container d-flex justify-content-between p-0">
+						<label for="price" class="form-label text-black-50 fst-italic">Precio</label>
+						<input 
+							type="text" 
+							title="Precio"
+							id="price" 
+							class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none fst-italic text-black-50" 
+							readOnly
+							placeholder="Precio"
+							tabindex="-1"
+						>
+					</div>				
+					<div class="container d-flex justify-content-between p-0">
+						<label for="measurement-unit" class="form-label text-black-50 fst-italic">Unidad de medida</label>
+						<input 
+							type="text" 
+							title="Unidad de medida"
+							id="measurement-unit" 
+							class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none fst-italic text-black-50" 
+							readonly
+							placeholder="Unidad de medida"
+							tabindex="-1"
+						>
+					</div>
+					<div class="container d-flex justify-content-between p-0">
+						<label for="_id" class="form-label text-black-50 fst-italic">Codigo</label>
+						<input 
+							type="text" 
+							title="Codigo"
+							id="_id" 
+							class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none fst-italic text-black-50" 
+							placeholder="Codigo" 
+							readonly
+							tabindex="-1"
+						>
+					</div>	
+					
+					<button 
+						class="btn btn-secondary btn-sm mt-2 mx-auto" 
+						id="btn-add-ingredient"
+						disabled
+						onclick="addRowToTable(event)"
+					>
+						Agregar
+					</button>
+				</div>
+				
+				<div id="table-main-container" class="flex-column gap-sm-2">
+					<div class="table-responsive">
+						<table id="table" class="table table-responsive-sm table-striped table-bordered table-hover text-center align-middle text-nowrap">
+							<caption style="caption-side:top; text-align:center">Receta</caption>
+							<thead>
+								<tr class="table table-dark">
+									<th>
+										Acciones
+									</th>
+									<th scope="col">
+										Ingrediente
+									</th>
+									<th scope="col">
+                                        Marca
+                                    </th>
+									<th scope="col">
+										Cantidad
+									</th>
+									<th scope="col">
+										Precio
+									</th>
+									<th scope="col">
+										Costo
+									</th>
+									<th scope="col">
+										Unidad de medida
+									</th>
+									<th scope="col">
+										Codigo
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								
+							</tbody>
+						</table>
+					</div>
+					<button
+						onmouseup="onsubmitNewRecipe()"
+						id="btn-submit-recipe"
+						class="btn btn-secondary btn-sm mt-2 mx-auto"
+						disabled
+					>
+						Enviar
+					</button>						
+				</div>
+			</form>			
+		</div>
+    </section>
+</body>
+</html>

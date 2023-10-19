@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Modificar recetas">
+    <title>Modificar recetas</title>
+	<link href="./styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="./node_modules//bootstrap/dist/css/bootstrap.min.css" />
+	<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./js/index.js" type="module"></script>
+    <script src="./js/functions.js" type="module"></script>
+    <script src="./js/services/fetchData.js" type="module"></script>
+    <script src="./js/modificarReceta.js" type="module"></script>
+    
+</head>
+<body class="bg-black">
+    <menu-bar></menu-bar>
+	<section class="containe-fluid vh-auto d-flex justify-content-center align-items-center p-5 overflow-x-hidden" >
+		<div class="container border border-black rounded p-5 bg-light">
+			<modal-for-recipes></modal-for-recipes>
+
+            <form 
+                class="text-center" 
+                id="form" 
+                onsubmit="return false" 
+            >
+				<div class="d-flex flex-column gap-sm-2 p-5 mb-2 border">
+					<div class="container d-flex justify-content-between p-0">
+						<label for="recipe-name" class="form-label text-dark">Nombre de la receta</label>
+						<input 
+							type="text" 
+							title="Nombre de la receta"
+							id="recipe-name" 
+                            name="recipe_name"
+							class="form-control form-control-sm rounded w-50 border-secondary-subtle" 
+							placeholder="Pizza Fugazzeta, Empanadas Caprese, Sandwich de Milanesa.." 
+							required
+						>
+					</div>	
+                    <div class="container d-flex justify-content-between p-0 pb-4">
+						<label for="category" class="form-label text-dark">Categoria</label>
+						<select 
+							id="category"
+							name="category"
+							title="Categoria"
+							class="form-select form-select-sm rounded w-50 border-secondary-subtle" 
+							aria-label="Category"
+							required
+						> 
+							<option value="Panes">Panes</option>
+							<option value="Pizzas">Pizzas</option>
+							<option value="Empanadas">Empanadas</option>
+							<option value="Canastitas">Canastitas</option>
+							<option value="Sandwichs">Sandwichs</option>
+							<option value="Papas">Papas</option>
+							<option value="Picadas">Picadas</option>
+							<option value="Platos">Platos</option>
+							<option value="Torres de panqueques">Torres de panqueques</option>
+							<option value="Pastas">Pastas</option>
+							<option value="Ensaladas">Ensaladas</option>
+							<option value="Parrilla u horno">Parrilla u horno</option>
+							<option value="Comida mexicana">Comida mexicana</option>
+							<option value="Comida brasilera">Comida brasilera</option>
+							<option value="Varios">Varios</option>
+						</select>
+					</div>	
+                    <div class="container d-flex justify-content-between p-0">
+						<label for="today-date" class="form-label text-black-50 fst-italic">Fecha de modificacion</label>
+						<input 
+							type="text" 
+							title="Fecha de modificacion"
+							id="today-date"
+							name="today_date"
+							class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none fst-italic text-black-50" 
+							placeholder="dd/mm/aaaa" 
+							required
+							readonly
+							tabindex="-1"
+						>
+					</div>
+                    <div class="container d-flex justify-content-between p-0">
+						<label for="_id" class="form-label text-black-50 fst-italic">Codigo</label>
+						<input 
+							type="text" 
+							title="Codigo"
+							id="_id"
+							name="_id"
+							class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none fst-italic text-black-50" 
+							placeholder="Codigo" 
+							required
+							readonly
+							tabindex="-1"
+						>
+					</div>
+				</div>
+
+                <div id="table-main-container" class="d-flex flex-column gap-sm-2">
+                    <div class="table-responsive">
+                        <table id="table" class="table table-responsive-sm table-striped table-bordered table-hover text-center align-middle text-nowrap">
+                            <caption style="caption-side:top; text-align:center">Receta</caption>
+                            <thead>
+                                <tr class="table table-dark">
+                                    <th>
+                                        Acciones
+                                    </th>
+                                    <th scope="col" class="w-100">
+                                        Ingrediente
+                                    </th>
+                                    <th scope="col">
+                                        Cantidad
+                                    </th>
+                                    <th scope="col" class="fst-italic text-white-50">
+                                        Unidad de medida
+                                    </th>
+									<th scope="col" class="fst-italic text-white-50">
+                                        Codigo
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            
+                            </tbody>
+                        </table>
+                        <table class="table table-responsive-sm text-start align-middle text-nowrap">
+                            <tr>
+                                <td class="bg-transparent border-0">
+                                    <button 
+                                        class="btn btn-dark btn-sm mx-auto"
+                                        onmouseup="addNewIngredient()"
+                                    >
+                                        Agregar ingrediente
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <button
+						onmouseup="onsubmitModifiedRecipe()"
+						id="btn-submit-recipe"
+						class="btn btn-secondary btn-sm mt-2 mx-auto"
+					>
+						Enviar
+					</button>
+                </div>    
+            </form>
+		</div>
+	</section>
+    <template id="templateSelect1"></template>
+</body>
+</html>

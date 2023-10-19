@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Listado de recetas">
+    <title>Listado de recetas</title>
+    <link href="./styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="./node_modules//bootstrap/dist/css/bootstrap.min.css" />
+	<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./js/index.js" type="module"></script>
+    <script src="./js/listaRecetas.js" type="module"></script>
+</head>
+<body class="bg-black">
+    <menu-bar></menu-bar>
+    <section class="container-fluid vh-auto d-flex justify-content-center align-items-center p-5 overflow-x-hidden" >
+		<div class="container border border-black rounded p-5 bg-light d-flex flex-column">
+            <modal-for-recipes></modal-for-recipes>
+
+            <form 
+                class="text-center" 
+                id="form" 
+                onsubmit="return false" 
+                style="display:none"
+            >
+                <div id="table-main-container" class="flex-column gap-sm-2">
+                    <div class="d-flex flex-column gap-sm-2 p-5 mb-2 border">
+                        <div class="container d-flex justify-content-between p-0">
+                            <label for="recipe-name" class="form-label text-dark">Nombre de la receta</label>
+                            <input 
+                                type="text" 
+                                title="Nombre de la receta"
+                                id="recipe-name"
+                                name="recipe_name"
+                                class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none" 
+                                placeholder="Pizza Fugazzeta, Empanadas Caprese, Sandwich de Milanesa.." 
+                                readonly
+                            >
+                        </div>
+                        <div class="container d-flex justify-content-between p-0 pb-4">
+                            <label for="category" class="form-label text-dark">Categoria</label>
+                            <input 
+                                type="text" 
+                                title="Categoria"
+                                id="category"
+                                name="category"
+                                class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none" 
+                                placeholder="Almacen, Verduleria, Carniceria.." 
+                                readonly
+                            >
+                        </div>
+                        <div class="container d-flex justify-content-between p-0">
+                            <label for="last-modification" class="form-label text-dark">Fecha de creacion</label>
+                            <input 
+                                type="text" 
+                                title="Fecha de ultima modificacion"
+                                id="last-modification"
+                                name="last_modification"
+                                class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none"
+                                placeholder="dd/mm/aaaa" 
+                                readonly
+                            >
+                        </div>
+                        <div class="container d-flex justify-content-between p-0">
+                            <label for="autor" class="form-label text-dark">Autor</label>
+                            <input 
+                                type="text" 
+                                title="Autor"
+                                id="autor" 
+                                name="autor" 
+                                class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none"
+                                readonly
+                                placeholder="Autor"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="table-responsive overflow-auto">
+                        <table 
+                            id="table" 
+                            class="table table-responsive-sm table-striped table-bordered table-hover text-center align-middle text-nowrap mt-2 ">
+                            <caption style="caption-side:top; text-align:center">Receta</caption>
+                            <thead>
+                                <tr class="table table-dark">
+                                    <th scope="col">
+                                        Ingrediente
+                                    </th>
+                                    <th scope="col">
+                                        Marca
+                                    </th>
+                                    <th scope="col">
+                                        Cantidad
+                                    </th>
+                                    <th scope="col">
+                                        Precio
+                                    </th>
+                                    <th scope="col">
+                                        Costo
+                                    </th>
+                                    <th scope="col">
+                                        Unidad de medida
+                                    </th>
+                                    <th scope="col">
+                                        Codigo
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                            <tfoot>
+                                <tr class="table table-secondary">
+                                    <td 
+                                        scope="row" 
+                                        class="fw-bold align-middle"
+                                    >
+                                        Costo Total: 
+                                    </td>
+                                    <td 
+                                        scope="row" 
+                                        colspan="6"
+                                        class="text-start fw-bolder"
+                                    >
+                                        <input 
+                                            id="total-cost"
+                                            name="total_cost" 
+                                            type="text" 
+                                            title="Costo total"
+                                            class="form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none fw-bold" 
+                                            placeholder="0" 
+                                            aria-label="Costo total" 
+                                            required
+                                            readonly
+                                        >  
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
