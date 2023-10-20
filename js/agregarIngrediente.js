@@ -6,10 +6,10 @@ window.onload = () => {
     todayDate.value = new Date().toLocaleDateString()
     const autor = document.querySelector('#autor')
     autor.value = capitalizeText('matias')
-    window.form = document.querySelector('#form')
 }
 
 const onsubmitNewIngredient = () => {
+    const form = document.querySelector('#form')
     if(form.checkValidity()){
         const ingredient = document.querySelector('#ingredient')
         const trademark = document.querySelector('#trademark')
