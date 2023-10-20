@@ -9,6 +9,7 @@ formAddIngredientTemplate.innerHTML = `
             <div class="container d-flex justify-content-between p-0">
                 <label for="ingredient" class="label form-label text-dark">Ingrediente</label>
                 <input 
+                    autofocus
                     type="text" 
                     id="ingredient" 
                     class="input form-control form-control-sm rounded w-50 border-secondary-subtle" 
@@ -30,14 +31,12 @@ formAddIngredientTemplate.innerHTML = `
             </div>	
             <div class="container d-flex justify-content-between p-0">
                 <label for="price" class="label text-dark">Precio</label>
-                <div class="input input-group d-flex flex-nowrap w-50 rounded">
-                    <div class="input-group-prepend input-group-sm">
-                        <span class="input-group-text rounded-end-0 border-end-0 border-secondary-subtle">$</span>
-                    </div>						
+                <div class="input input-group d-flex flex-nowrap w-50 rounded m-0 p-0">
+                    <span class="input-group-text rounded-end-0 border-end-0 border-secondary-subtle py-0 my-0">$</span>
                     <input 
                         type="number" 
                         id="price" 
-                        class="input form-control form-control-sm rounded-start-0 border-start-0 border-secondary-subtle mb-0" 
+                        class="input form-control form-control-sm rounded rounded-start-0 border-start-0 border-secondary-subtle  py-0 my-0" 
                         aria-label="Price"
                         placeholder="0.00"
                         step="0.10"
@@ -51,7 +50,7 @@ formAddIngredientTemplate.innerHTML = `
                 <label for="measurement-unit" class="label form-label text-dark">Unidad de media</label>
                 <select 
                     id="measurement-unit" 
-                    class="input form-select form-select-sm w-50 h-100 border-secondary-subtle" 
+                    class="input form-select form-select-sm w-50 h-auto border-secondary-subtle" 
                     aria-label="Measurement unit" 
                     required
                     title="Unidad de medida"
@@ -72,7 +71,7 @@ formAddIngredientTemplate.innerHTML = `
                 <label for="category" class="label form-label text-dark">Categoria</label>
                 <select 
                     id="category" 
-                    class="input form-select form-select-sm w-50 h-100 border-secondary-subtle" 
+                    class="input form-select form-select-sm w-50 h-auto border-secondary-subtle" 
                     aria-label="Category" 
                     required
                     title="Categoria"

@@ -49,7 +49,7 @@ const addRowsToTable = (data) => {
                     type="text" 
                     name="ingredient"
                     title="Ingrediente"
-                    class="ingredient form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
+                    class="ingredient recipe-list-input form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
                     placeholder="Nombre del ingrediente" 
                     required
                     readonly
@@ -61,7 +61,7 @@ const addRowsToTable = (data) => {
                     name="trademark"
                     type="text" 
                     title="Marca"
-                    class="trademark form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
+                    class="trademark recipe-list-input form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
                     placeholder="Marca" 
                     required
                     readonly
@@ -73,7 +73,7 @@ const addRowsToTable = (data) => {
                     name="quantity"
                     type="text" 
                     title="Cantidad"
-                    class="quantity form-control w-100 border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
+                    class="quantity recipe-list-input form-control w-100 border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
                     placeholder="0" 
                     required
                     readonly
@@ -85,7 +85,7 @@ const addRowsToTable = (data) => {
                     name="price"
                     type="number" 
                     title="Precio"
-                    class="price form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
+                    class="price recipe-list-input form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
                     placeholder="0.00" 
                     required
                     readonly
@@ -97,7 +97,7 @@ const addRowsToTable = (data) => {
                     name="cost_value"
                     type="text" 
                     title="Costo"
-                    class="cost-value form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
+                    class="cost-value recipe-list-input form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
                     readonly
                     placeholder="Costo"
                     value="${findIngredientData(e.ingrediente, e.cantidad).cost_value}"
@@ -108,7 +108,7 @@ const addRowsToTable = (data) => {
                     name="measurement_unit"
                     type="text" 
                     title="Unidad de medida"
-                    class="measurement-unit form-control w-100 border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
+                    class="measurement-unit recipe-list-input form-control w-100 border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
                     readonly
                     placeholder="Unidad de medida"
                     value="${capitalizeText(findIngredientData(e.ingrediente, e.cantidad).measurement_unit)}"
@@ -119,7 +119,7 @@ const addRowsToTable = (data) => {
                     name="_id" 
                     type="text" 
                     title="Codigo"
-                    class="_id form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none " 
+                    class="_id recipe-list-input form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none " 
                     placeholder="0" 
                     aria-label="Codigo" 
                     required

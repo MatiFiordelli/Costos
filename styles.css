@@ -6,22 +6,45 @@ th {
   font-size: 0.7rem !important;
 }
 
+input:read-only::-moz-placeholder {
+  background-color: transparent;
+  color: #AAA !important;
+}
+
+input:read-only:-ms-input-placeholder {
+  background-color: transparent;
+  color: #AAA !important;
+}
+
+input:-moz-read-only:not(.recipe-list-input), input:-moz-read-only:focus:not(.recipe-list-input), input:-moz-read-only::placeholder {
+  background-color: transparent;
+  color: #AAA !important;
+}
+
+input:read-only:not(.recipe-list-input), input:read-only:focus:not(.recipe-list-input), input:read-only::placeholder {
+  background-color: transparent;
+  color: #AAA !important;
+}
+
 @media only screen and (min-width: 1800px) {
   * {
-    font-size: 1.4vw !important;
+    font-size: 1.1vw !important;
   }
   body > section > div {
     min-width: 90vw;
   }
 }
 @media only screen and (max-width: 1199.98px) {
-  * {
-    font-size: large !important;
+  body > section.p-5.p-5, body > section.p-5 {
+    padding: 9px !important;
+  }
+  body > section.p-5 div:first-child, body > section div:first-child {
+    max-width: 100%;
   }
 }
 @media only screen and (max-width: 767.98px) {
   * {
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
   }
   .tabla {
     font-size: medium !important;
@@ -29,7 +52,7 @@ th {
 }
 @media only screen and (max-width: 575.98px) {
   * {
-    font-size: 0.9rem !important;
+    font-size: 0.8rem !important;
   }
   body > .section {
     padding: 0 !important;
@@ -40,29 +63,67 @@ th {
     padding: 10px !important;
     margin: 0 !important;
   }
+  body form {
+    padding: 10px !important;
+  }
+  body form > div {
+    flex-direction: column;
+  }
+  body form > div .label {
+    margin: 5px;
+  }
+  body form > div div {
+    margin-bottom: 5px;
+  }
   .tabla {
     padding: 0 !important;
     margin: 0 !important;
   }
-  body .form {
-    padding: 10px !important;
-  }
-  body .form > div {
-    flex-direction: column;
-  }
-  body .form > div .label {
-    margin: 5px;
-  }
-  body .form > div .input, body .form > div div > .input {
-    width: 100% !important;
-    margin-bottom: 15px;
+}
+@media only screen and (max-width: 417px) {
+  * {
+    font-size: 0.7rem !important;
   }
 }
 @media only screen and (max-width: 400px) {
   * {
-    font-size: 0.8rem !important;
+    font-size: 0.9rem !important;
   }
-  body > section.p-5, body > section .p-5 {
-    padding: 9px !important;
+  body > section > div.p-5 {
+    padding: 5px !important;
+  }
+  body form {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  body form > div {
+    flex-direction: column;
+  }
+  body form > div.border {
+    border: none !important;
+  }
+  body form > div.p-5 {
+    padding: 1px !important;
+  }
+  body form > div > div {
+    margin-bottom: 5px;
+  }
+  body form > div > div.d-flex {
+    display: flex !important;
+    flex-direction: column;
+  }
+  body form > div > div > div.d-flex {
+    display: flex !important;
+    flex-direction: row;
+  }
+  body form > div > div > div span {
+    width: auto !important;
+  }
+  body form > div > div .w-50 {
+    width: 100% !important;
+  }
+  body form label {
+    margin: 5px 3px 3px !important;
+    text-align: start;
   }
 }/*# sourceMappingURL=styles.css.map */

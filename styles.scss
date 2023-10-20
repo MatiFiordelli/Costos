@@ -11,9 +11,14 @@ th{
     font-size:0.7rem !important;
 }
 
+input:read-only:not(.recipe-list-input), input:read-only:focus:not(.recipe-list-input), input:read-only::placeholder{
+    background-color:  transparent;
+    color: #AAA !important;
+}
+
 @media only screen and (min-width:1800px){
     *{
-        font-size:1.4vw !important;
+        font-size:1.1vw !important;
     }
 
     body{
@@ -26,14 +31,22 @@ th{
 }
 
 @media only screen and (max-width:1199.98px){
-    *{
-        font-size:large !important;
+    body{
+        &>section.p-5, 
+        &>section{
+            &.p-5{
+                padding:9px !important;
+            }
+            & div:first-child{
+                max-width: 100%;
+            }
+        }    
     }
 }
 
 @media only screen and (max-width:767.98px){
     *{
-        font-size: 1rem !important;
+        font-size: 0.9rem !important;
     }
 
     .tabla{
@@ -43,7 +56,7 @@ th{
 
 @media only screen and (max-width:575.98px){
     *{
-        font-size: 0.9rem !important;
+        font-size: 0.8rem !important;
     }
 
     body{
@@ -56,6 +69,22 @@ th{
                 padding:10px !important;
                 margin: 0 !important;
             }
+        }   
+        
+        form{
+            padding:10px !important;
+    
+            &>div{
+                flex-direction: column;
+    
+                & .label{
+                    margin:5px;
+                }
+    
+                & div{
+                    margin-bottom:5px;
+                }
+            }
         }
     }
 
@@ -64,32 +93,73 @@ th{
         margin: 0 !important;
     }
 
-    body .form{
-        padding:10px !important;
-                
+        
+}
 
-        &>div{
-            flex-direction: column;
-
-            & .label{
-                margin:5px;
-            }
-
-            & .input, div>.input{
-                width:100% !important;
-                margin-bottom:15px;
-            }
-        }
-    }    
+@media only screen and (max-width:417px){
+    *{
+        font-size: 0.7rem !important;
+    }
 }
 
 @media only screen and (max-width:400px){
     *{
-        font-size: 0.8rem !important;
+        font-size: 0.9rem !important;
     }
 
-    body>section.p-5, body>section .p-5{
-        padding:9px !important;
+    body{
+        >section{
+            &>div{
+                &.p-5{
+                    padding:5px !important;
+                }
+            }
+        }
+        form{
+            margin:0 !important;
+            padding:0 !important;
+    
+            &>div{
+                flex-direction: column;
+
+                &.border{
+                    border:none !important;
+                }
+
+                &.p-5{
+                    padding:1px !important;
+                }
+                    
+                &>div{
+                    margin-bottom:5px;
+                    
+                    &.d-flex{
+                        display:flex !important;
+                        flex-direction: column;
+                    }
+
+                    &>div{
+                        &.d-flex{
+                            display: flex !important;
+                            flex-direction: row;
+                        }
+                        span{
+                            width: auto !important;
+                        }
+                    }
+
+                    .w-50{
+                        width: 100% !important;
+                    }
+                }
+            }
+
+            & label{
+                margin:5px 3px 3px !important;
+                text-align: start;
+            }
+        }
     }
+    
 }
 

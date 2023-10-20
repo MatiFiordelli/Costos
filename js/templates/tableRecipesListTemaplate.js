@@ -35,8 +35,8 @@ const templateTableRecipesList = async () => {
                             <tr 
                                 onclick=
                                 ${tableType==='modify'
-                                    ? `selectedRow('${e._id}'); data-bs-dismiss='modal'`
-                                    : "console.log('aaa')"
+                                    ? `selectedRow('${e._id}'); data-bs-dismiss='modal';`
+                                    : ''
                                 }                                
                             >
                                 <td style="display:${displayValue}">

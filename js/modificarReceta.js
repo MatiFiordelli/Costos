@@ -63,7 +63,7 @@ const addRowsToTable = (data) => {
                 <select 
                     name="ingredient"
                     title="Ingrediente"
-                    class="ingredient select-ingredient form-select form-select-sm w-100 border-0 bg-transparent text-black text-center rounded-0" 
+                    class="ingredient select-ingredient form-select form-select-sm w-auto border-0 bg-transparent text-black text-center rounded-0" 
                     aria-label="Nombre del ingrediente"
                     placeholder="Elija el ingrediente" 
                     required
@@ -122,8 +122,8 @@ const selectedRow = (id) => {
     fetch(`https://costos-backend.vercel.app/recipes/_id/${id}`)
     .then((res) => res.json())
     .then((data)=>{
-        recipeName.value = data[0].nombre
-        category.value = data[0].categoria
+        recipeName.value = capitalizeText(data[0].nombre)
+        category.value = capitalizeText(data[0].categoria)
         codigo.value = data[0]._id
         addRowsToTable(data[0])
         form.style.display = 'block'
@@ -144,6 +144,7 @@ const selectedRow = (id) => {
             el.appendChild(templateClone)
         })
     })
+    .catch((err)=>console.log(err))
 }
 
 const addNewIngredient = () => {
