@@ -35,11 +35,11 @@ const onsubmitNewIngredient = () => {
             body: JSON.stringify(objRecipe)
         })
         .then(()=>{
-            console.log('ingrediente enviado')
+            alert('Ingrediente agregado')
+            window.location.reload()
         })
         .catch((err)=>console.log(err))
 
-        window.location.reload()
     }else{
         alert('Completar todos los campos correctamente')
     }
