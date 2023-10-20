@@ -11,6 +11,8 @@ window.onload = () => {
     .then((data) => {
         dataIngredients = data
     })  
+
+    const res = document.querySelector('#resolution').innerHTML = window.innerWidth +', '+window.innerHeight
 }
 
 const findIngredientData = (ingredient, quantity) => {
