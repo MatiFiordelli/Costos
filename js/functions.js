@@ -19,13 +19,13 @@ async function removeRow(e, origin, _id) {
     if (c) {
 
         if (origin === 'recipe') {
-            const url = 'http://localhost:3001/deleterecipe/'
+            const url = 'https://costos-backend.vercel.app/deleterecipe/'
             await fetchToDelete(url, _id) 
                 ? t.deleteRow(i)
                 : alert('Ocurrió un error, no se pudo eliminar el producto')
         }
         if (origin === 'ingredient') {
-            const url = 'http://localhost:3001/deleteingredient/'
+            const url = 'https://costos-backend.vercel.app/deleteingredient/'
             await fetchToDelete(url, _id) 
                 ? t.deleteRow(i)
                 : alert('Ocurrió un error, no se pudo eliminar el producto')

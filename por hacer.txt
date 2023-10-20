@@ -9,6 +9,8 @@ ver bien bien las fechas!!!
 en todos los findIngredientData() creo q el if no deberia ser con ingrediente sino con codigo!!!
 los titles deberian estar en los td en vez de en los form elements ver!!!
 en vez de readonly, ver si poner disabled para no confundir al usuario
+hay algunos labels que no estan centrados verticalmente
+la resolucion de mi celular tiene el font-size muy pequeño, ver el caso de 'fecha de creacion
 
 corregir al ingles web y base de datos
 poner los fetchs apartes

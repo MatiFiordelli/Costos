@@ -29,7 +29,7 @@ const onsubmitNewIngredient = () => {
             autor: autor.value
         }
         
-        fetch('http://localhost:3001/addingredient/', {
+        fetch('https://costos-backend.vercel.app/addingredient/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(objRecipe)

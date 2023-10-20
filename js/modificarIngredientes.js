@@ -42,7 +42,7 @@ const onChangeValue = (rowNumber) => {
 
 const onsubmitModifiedIngredients = () => {
     if(form.checkValidity()){
-        fetch('http://localhost:3001/updateingredients/', {
+        fetch('https://costos-backend.vercel.app/updateingredients/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(rowsObj)

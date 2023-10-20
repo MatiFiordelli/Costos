@@ -176,7 +176,7 @@ const onsubmitModifiedRecipe = () => {
                     })
         }
 
-        fetch('http://localhost:3001/updaterecipe/', {
+        fetch('https://costos-backend.vercel.app/updaterecipe/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(objRecipe)
