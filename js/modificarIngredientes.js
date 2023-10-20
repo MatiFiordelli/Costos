@@ -48,11 +48,11 @@ const onsubmitModifiedIngredients = () => {
             body: JSON.stringify(rowsObj)
         })
         .then(()=>{
-            console.log('Ingredientes enviados')  
+            alert('Ingredientes modificados')  
+            window.location.reload()
         })
         .catch((err)=>{ console.log(err) })
 
-        window.location.reload()
     } else{
         alert('Completar todos los campos correctamente')
     }
