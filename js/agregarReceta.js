@@ -1,6 +1,6 @@
 import { capitalizeText } from './index.js'
 
-let fetchedData = {}
+let dataIngredients = {}
 let matchValue = false
 window.onload = () => {
     const todayDate = document.querySelector('#today-date')
@@ -9,7 +9,7 @@ window.onload = () => {
     fetch('https://costos-backend.vercel.app/ingredients')
         .then((res) => res.json())
         .then((data) => {
-            fetchedData = data
+            dataIngredients = data
             const lo = document.querySelector('#list-options-ingredient')
             while (lo.hasChildNodes()) {
                 lo.removeChild(lo.firstChild)
@@ -68,12 +68,12 @@ const oninputAgregarRecetaIngrediente = (e) => {
     matchValue = false
 
     const setElementsValues = (i) => {
-        inputPrice.value = fetchedData[i].precio
-        inputMU.value = capitalizeText(fetchedData[i].unidad_medida)
-        input_ID.value = fetchedData[i]._id
+        inputPrice.value = dataIngredients[i].precio
+        inputMU.value = capitalizeText(dataIngredients[i].unidad_medida)
+        input_ID.value = dataIngredients[i]._id
         
         if(inputQuantity.value>0){
-            inputCostValue.value = inputPrice.value * inputQuantity.value
+            inputCostValue.value = (inputPrice.value * inputQuantity.value).toFixed(2)
             btnAddIngredient.disabled = false
         }
     }
@@ -99,10 +99,17 @@ const onchangeAgregarRecetaCantidad = (e) => {
     }
 }
 
-/* const onEmptyingTable = () => {
-    if(table.childElementCount === 0)
-        tableMainContainer.classList.remove('d-flex')
-} */
+const findIngredientData = (ingredient) => {
+    let trademark = 'No encontrado'
+    dataIngredients.some((e, i)=>{
+        if(e.ingrediente.toLowerCase()===ingredient.toLowerCase()) {
+            trademark = e.marca
+        }
+    })
+    return {
+        trademark: trademark
+    }
+}
 
 const addRowToTable = (e) => {
     e.preventDefault()
@@ -141,7 +148,7 @@ const addRowToTable = (e) => {
                     placeholder="Marca" 
                     required
                     readonly
-                    value="{capitalizeText(findIngredientData(e.ingrediente, e.cantidad).trademark)}"
+                    value="${capitalizeText(findIngredientData(inputIngredient.value).trademark)}"
                 >
             </td>
             <td scope="row">
@@ -159,11 +166,11 @@ const addRowToTable = (e) => {
                     value="${inputQuantity.value}"
                 >
             </td>
-            <td scope="row">
-                ${inputCostValue.value}
-            </td>
             <td scope="row" title="Precio">
                 ${inputPrice.value}
+            </td>
+            <td scope="row">
+                ${inputCostValue.value}
             </td>
             <td scope="row">
                 ${capitalizeText(inputMU.value)}
@@ -214,11 +221,12 @@ const onsubmitNewRecipe = () => {
             body: JSON.stringify(objRecipe)
         })
         .then(()=>{
-            console.log('receta enviada')        
+            alert('Receta creada')  
+            window.location.reload()      
         })
         .catch((err)=>console.log(err))
         
-        window.location.reload()
+        
     }else{
         alert('Completar todos los campos correctamente')
     }

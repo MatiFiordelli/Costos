@@ -11,6 +11,7 @@ los titles deberian estar en los td en vez de en los form elements ver!!!
 en vez de readonly, ver si poner disabled para no confundir al usuario
 hay algunos labels que no estan centrados verticalmente
 la resolucion de mi celular tiene el font-size muy pequeño, ver el caso de 'fecha de creacion
+los id y name de la fecha en form, poner nombre adecuado, corregir
 
 corregir al ingles web y base de datos
 poner los fetchs apartes

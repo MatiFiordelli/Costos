@@ -1,7 +1,7 @@
 import { fetchData } from "../services/fetchData.js"
+import { capitalizeText } from '../index.js'
 
 const templateTableRecipe = async () => {
-
     const data = await fetchData('recipes')
         .then((res) => {
             if (res !== undefined) {

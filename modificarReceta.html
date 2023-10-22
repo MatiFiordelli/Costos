@@ -26,75 +26,7 @@
                 id="form" 
                 onsubmit="return false" 
             >
-				<div class="d-flex flex-column gap-sm-2 p-5 mb-2 border">
-					<div class="container d-flex justify-content-between p-0">
-						<label for="recipe-name" class="form-label text-dark">Nombre de la receta</label>
-						<input 
-							type="text" 
-							title="Nombre de la receta"
-							id="recipe-name" 
-                            name="recipe_name"
-							class="form-control form-control-sm rounded w-50 border-secondary-subtle" 
-							placeholder="Pizza Fugazzeta, Empanadas Caprese, Sandwich de Milanesa.." 
-							required
-						>
-					</div>	
-                    <div class="container d-flex justify-content-between p-0 pb-4">
-						<label for="category" class="form-label text-dark">Categoria</label>
-						<select 
-							id="category"
-							name="category"
-							title="Categoria"
-							class="form-select form-select-sm rounded w-50 border-secondary-subtle" 
-							aria-label="Category"
-							required
-						> 
-							<option value="Panes">Panes</option>
-							<option value="Pizzas">Pizzas</option>
-							<option value="Empanadas">Empanadas</option>
-							<option value="Canastitas">Canastitas</option>
-							<option value="Sandwichs">Sandwichs</option>
-							<option value="Papas">Papas</option>
-							<option value="Picadas">Picadas</option>
-							<option value="Platos">Platos</option>
-							<option value="Torres de panqueques">Torres de panqueques</option>
-							<option value="Pastas">Pastas</option>
-							<option value="Ensaladas">Ensaladas</option>
-							<option value="Parrilla u horno">Parrilla u horno</option>
-							<option value="Comida mexicana">Comida mexicana</option>
-							<option value="Comida brasilera">Comida brasilera</option>
-							<option value="Varios">Varios</option>
-						</select>
-					</div>	
-                    <div class="container d-flex justify-content-between p-0">
-						<label for="today-date" class="form-label text-black-50 fst-italic">Fecha de modificacion</label>
-						<input 
-							type="text" 
-							title="Fecha de modificacion"
-							id="today-date"
-							name="today_date"
-							class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none fst-italic text-black-50" 
-							placeholder="dd/mm/aaaa" 
-							required
-							readonly
-							tabindex="-1"
-						>
-					</div>
-                    <div class="container d-flex justify-content-between p-0">
-						<label for="_id" class="form-label text-black-50 fst-italic">Codigo</label>
-						<input 
-							type="text" 
-							title="Codigo"
-							id="_id"
-							name="_id"
-							class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none fst-italic text-black-50" 
-							placeholder="Codigo" 
-							required
-							readonly
-							tabindex="-1"
-						>
-					</div>
-				</div>
+				<form-recipe-main-info config-2="modify"></form-recipe-main-info>
 
                 <div id="table-main-container" class="d-flex flex-column gap-sm-2">
                     <div class="table-responsive">

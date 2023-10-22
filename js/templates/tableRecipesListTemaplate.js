@@ -16,7 +16,7 @@ const templateTableRecipesList = async () => {
                         <caption style="caption-side:top; text-align:center">Lista de recetas</caption>
                         <thead>
                             <tr class="table table-dark">
-                            <th style="display:${displayValue}">
+                                <th style="display:${displayValue}">
                                     Acciones
                                 </th>
                                 <th scope="col">

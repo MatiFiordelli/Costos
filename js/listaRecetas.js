@@ -146,7 +146,7 @@ const addRowsToTable = (data) => {
 const selectedRow = (id) => { 
     const recipeNamme = document.querySelector('#recipe-name')
     const category = document.querySelector('#category')
-    const lastModification = document.querySelector('#last-modification')
+    const lastModification = document.querySelector('#today-date')
     const autor = document.querySelector('#autor')
 
     fetch(`https://costos-backend.vercel.app/recipes/_id/${id}`)
