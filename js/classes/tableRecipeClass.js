@@ -10,16 +10,10 @@ export default class TableRecipes extends HTMLElement{
     }
 
     async attributeChangedCallback(name, oldValue, newValue){
-        const s = templateTableRecipe()
-        s.then((res)=>{
-            this.appendChild(res.content.cloneNode(true))
-        })
-
-        if(name === 'config'){
-            localStorage.setItem('config', newValue)
-            //await import('../templates/tableRecipesTemplate.js')
-            //.then((e)=>this.appendChild(e.default.content.cloneNode(true)))            
-        }        
+        if(name==='config'){
+            const f = templateTableRecipe(newValue)
+            f.then((res)=>{this.appendChild(res.content.cloneNode(true))}) 
+        }      
     }
 
     static get observedAttributes(){

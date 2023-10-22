@@ -1,12 +1,12 @@
 import { fetchData } from "../services/fetchData.js"
 import { capitalizeText } from '../index.js'
 
-const templateTableRecipesList = async () => {
+const templateTableRecipesList = async (config) => {
     const data = await fetchData('recipes')
         .then((res) => {
             if (res !== undefined) {
-                const displayValue = localStorage.getItem('config').split('/')[0]
-                const tableType = localStorage.getItem('config').split('/')[1]
+                const displayValue = config.split('/')[0]
+                const tableType = config.split('/')[1]
                 
                 const tableRecipes = document.createElement('template')
 

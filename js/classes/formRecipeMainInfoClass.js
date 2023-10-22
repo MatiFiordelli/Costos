@@ -10,8 +10,10 @@ export default class FormRecipeMainInfo extends HTMLElement{
     }
 
     async attributeChangedCallback(name, oldValue, newValue){
-        const f = formRecipeMainInfo(newValue)
-        f.then((res)=>this.appendChild(res.content.cloneNode(true)))
+        if(name==='config-2'){
+            const f = formRecipeMainInfo(newValue)
+            f.then((res)=>this.appendChild(res.content.cloneNode(true)))
+        }
     }
 
     static get observedAttributes(){
