@@ -12,6 +12,7 @@ en vez de readonly, ver si poner disabled para no confundir al usuario
 hay algunos labels que no estan centrados verticalmente
 la resolucion de mi celular tiene el font-size muy pequeño, ver el caso de 'fecha de creacion
 los id y name de la fecha en form, poner nombre adecuado, corregir
+ver los alerts de los fetchs, que todos tengan ese aviso de confirmacion
 
 corregir al ingles web y base de datos
 poner los fetchs apartes

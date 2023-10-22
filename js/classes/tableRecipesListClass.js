@@ -1,4 +1,4 @@
-import templateTableRecipesList from '../templates/tableRecipesListTemaplate.js'
+import templateTableRecipesList from '../templates/tableRecipesListTemplate.js'
 
 export default class TableRecipesList extends HTMLElement{
     constructor(){

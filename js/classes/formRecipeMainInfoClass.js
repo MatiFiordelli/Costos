@@ -1,4 +1,4 @@
-import formRecipeMainInfo from "../templates/formRecipeMainInfo.js"
+import formRecipeMainInfo from "../templates/formRecipeMainInfoTemplate.js"
 
 export default class FormRecipeMainInfo extends HTMLElement{
     constructor(){

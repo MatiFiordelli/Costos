@@ -2,7 +2,7 @@ import MenuSection from './classes/menuClass.js'
 import TableIngredients from './classes/tableIngredientsClass.js'
 import TableRecipe from './classes/tableRecipeClass.js'
 import TableRecipesList from './classes/tableRecipesListClass.js'
-import ModalForRecipes from './classes/modalForRecipes.js'
+import ModalForRecipes from './classes/modalForRecipesClass.js'
 import FormAddIngredient from './classes/formAddIngredientClass.js'
 import FormRecipeMainInfo from './classes/formRecipeMainInfoClass.js'
 
