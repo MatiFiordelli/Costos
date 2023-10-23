@@ -1,5 +1,6 @@
-import { capitalizeText } from '../js/index.js'
+import { capitalizeText, findIngredientData } from '../js/index.js'
 
+let dataIngredients = null
 window.onload = () => {
     new bootstrap.Modal(document.querySelector('#recipe-modal')).show()
     window.form = document.querySelector('#form')
@@ -9,40 +10,40 @@ window.onload = () => {
     window.recipeName = document.querySelector('#recipe-name')
     window.category = document.querySelector('#category')
     window.codigo = document.querySelector('#_id')
-    window.dataIngredients = null
     window.tableMainContainer = document.querySelector('#table-main-container')
     window.tableBody = document.querySelector('#table tbody')
-
+   
     fetch('https://costos-backend.vercel.app/ingredients')
     .then((res) => res.json())
     .then((data) => {
         dataIngredients = data
-    })    
-}
-
-const findIngredientData = (ingredient) => {
-    let MU = 'No encontrado'
-    let _id = 'No encontrado'
-    dataIngredients.some((e, i)=>{
-        if(e.ingrediente.toLowerCase()===ingredient.toLowerCase()) {
-            MU = dataIngredients[i].unidad_medida 
-            _id = dataIngredients[i]._id
-        }
-    })
-    return {
-        measurement_unit: MU,
-        codigo: _id
-    }
+    })  
+    
 }
 
 const updateMeasurementUnitSelect = (e) => {
-    const measurementUnit = e.closest('tr').querySelectorAll('.measurement-unit')[0]
     const ingredient = e.closest('tr').querySelectorAll('.ingredient')[0]
+    const quantity = e.closest('tr').querySelectorAll('.quantity')[0]
+    const trademark = e.closest('tr').querySelectorAll('.trademark')[0]
+    const price = e.closest('tr').querySelectorAll('.price')[0]
+    const cost_value = e.closest('tr').querySelectorAll('.cost-value')[0]
+    const measurementUnit = e.closest('tr').querySelectorAll('.measurement-unit')[0]
     const codigo = e.closest('tr').querySelectorAll('.codigo')[0]
-    const ingredientData = findIngredientData(ingredient.value)
-    
-    measurementUnit.value = capitalizeText(ingredientData['measurement_unit'])
-    codigo.value = ingredientData['codigo']
+
+    const ingredientData = findIngredientData(dataIngredients, ingredient.value, quantity.value)
+
+    trademark.value = capitalizeText(ingredientData.trademark)
+    price.value = ingredientData.price
+    cost_value.value = ingredientData.cost_value
+    measurementUnit.value = capitalizeText(ingredientData.measurement_unit)
+    codigo.value = ingredientData._id
+}
+
+window.updateQuantity = (e) => {
+    const quantity = e.closest('tr').querySelectorAll('.quantity')[0]
+    const price = e.closest('tr').querySelectorAll('.price')[0]
+    const cost_value = e.closest('tr').querySelectorAll('.cost-value')[0]
+    cost_value.value = quantity.value * price.value
 }
 
 const addRowsToTable = (data) => {
@@ -78,23 +79,60 @@ const addRowsToTable = (data) => {
                     type="number" 
                     name="quantity"
                     title="Cantidad"
-                    class="quantity form-control w-100 border-0 bg-transparent text-black text-center rounded-0" 
+                    class="quantity form-control w-auto border-0 bg-transparent text-black text-center rounded-0" 
                     placeholder="0" 
                     step="any"
-                    min="0"
+                    min="0.001"
                     max="999"
                     required
                     value="${e.cantidad}"
+                    onchange="updateQuantity(this)"
+                >
+            </td>
+            <td scope="row">
+                <input 
+                    type="text" 
+                    title="Marca"
+                    name="trademark"
+                    class="trademark form-control w-auto border-0 bg-transparent text-black-50 text-center rounded-0 shadow-none" 
+                    placeholder="Marca" 
+                    required
+                    readonly
+                    value="${capitalizeText(findIngredientData(dataIngredients, e.ingrediente, null).trademark)}"
+                >
+            </td>
+            <td scope="row">
+                <input 
+                    type="number" 
+                    title="Precio"
+                    name="price"
+                    class="price recipe-list-input form-control w-auto border-0 bg-transparent text-black-50 text-center rounded-0 shadow-none" 
+                    placeholder="0.00" 
+                    required
+                    readonly
+                    value="${findIngredientData(dataIngredients, e.ingrediente, null).price}"
+                >
+            </td>
+            <td scope="row">
+                <input 
+                    type="number" 
+                    title="Costo"
+                    name="cost-value"
+                    class="cost-value recipe-list-input form-control w-auto border-0 bg-transparent text-black-50 text-center rounded-0 shadow-none" 
+                    readonly
+                    placeholder="Costo"
+                    value="${findIngredientData(dataIngredients, e.ingrediente, e.cantidad).cost_value}"
                 >
             </td>
             <td scope="row">
                 <input 
                     type="text" 
                     title="Unidad de medida"
-                    class="measurement-unit form-control w-100 border-0 bg-transparent text-black text-center rounded-0 shadow-none fst-italic text-black-50" 
+                    name="measurement-unit"
+                    class="measurement-unit form-control w-auto border-0 bg-transparent text-black-50 text-center rounded-0 shadow-none fst-italic text-black-50" 
                     readonly
                     placeholder="Unidad de medida"
-                    value="${capitalizeText(findIngredientData(e.ingrediente)['measurement_unit'])}"
+                    value="${capitalizeText(findIngredientData(dataIngredients, e.ingrediente, null).measurement_unit)}"
                     tabindex="-1"
                 >
             </td>
@@ -103,7 +141,7 @@ const addRowsToTable = (data) => {
                     type="text" 
                     name="codigo" 
                     title="Codigo"
-                    class="codigo form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none fst-italic text-black-50" 
+                    class="codigo form-control w-auto border-0 bg-transparent text-black-50 text-center rounded-0 shadow-none fst-italic text-black-50" 
                     placeholder="0" 
                     aria-label="Codigo" 
                     required

@@ -9,7 +9,6 @@ formAddIngredientTemplate.innerHTML = `
             <div class="container d-flex justify-content-between p-0">
                 <label for="ingredient" class="label form-label text-dark">Ingrediente</label>
                 <input 
-                    autofocus
                     type="text" 
                     id="ingredient" 
                     class="input form-control form-control-sm rounded w-50 border-secondary-subtle" 

@@ -7,7 +7,7 @@ const formRecipeMainInfo = async (config) => {
             <div class="container d-flex justify-content-between p-0">
                 <label for="recipe-name" class="form-label text-dark">Nombre de la receta</label>
                 <input 
-                    autofocus
+                    ${tableType!=='list' ? 'autofocus' : ''}
                     type="text" 
                     title="Nombre de la receta"
                     id="recipe-name"

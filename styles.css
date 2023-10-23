@@ -6,26 +6,22 @@ th {
   font-size: 0.7rem !important;
 }
 
-input:read-only::-moz-placeholder {
-  background-color: transparent;
-  color: #AAA !important;
+input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.5) !important;
 }
 
-input:read-only:-ms-input-placeholder {
-  background-color: transparent;
-  color: #AAA !important;
+input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5) !important;
 }
 
-input:-moz-read-only:not(.recipe-list-input), input:-moz-read-only:focus:not(.recipe-list-input), input:-moz-read-only::placeholder {
-  background-color: transparent;
-  color: #AAA !important;
+input::placeholder {
+  color: rgba(0, 0, 0, 0.5) !important;
 }
 
-input:read-only:not(.recipe-list-input), input:read-only:focus:not(.recipe-list-input), input:read-only::placeholder {
-  background-color: transparent;
-  color: #AAA !important;
-}
-
+/* input:read-only:not(.recipe-list-input), input:read-only:focus:not(.recipe-list-input), input:read-only::placeholder{
+    background-color:  transparent;
+    color: #AAA !important;
+} */
 @media only screen and (min-width: 1800px) {
   * {
     font-size: 1.1vw !important;

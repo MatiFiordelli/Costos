@@ -18,3 +18,35 @@ export const capitalizeText = (text) => {
     if(typeof text === 'undefined' || text === null) return '?'
     return text[0].toUpperCase() + text.slice(1).toLowerCase()    
 }
+
+export const findIngredientData = (dataIngredients, ingredient, quantity) => {
+    const msg = 'No encontrado'
+    let _id = msg
+    let trademark = msg
+    let price = msg
+    let costValue = msg
+    let MU = msg
+    let category = msg
+    let last_modification = msg
+
+    dataIngredients.some((e, i)=>{
+        if(e.ingrediente.toLowerCase()===ingredient.toLowerCase()) {
+            _id = dataIngredients[i]._id
+            trademark = dataIngredients[i].marca
+            price = dataIngredients[i].precio
+            quantity!==null ? costValue = (price * quantity).toFixed(2) : null
+            MU = dataIngredients[i].unidad_medida 
+            category = dataIngredients[i].category
+            last_modification = dataIngredients[i].ultima_modificacion            
+        }
+    })
+    return {
+        _id: _id,
+        trademark: trademark,
+        price: price,
+        cost_value: costValue,
+        measurement_unit: MU,
+        category: category,
+        last_modification: last_modification        
+    }
+}

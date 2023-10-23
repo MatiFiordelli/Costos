@@ -1,4 +1,4 @@
-import { capitalizeText } from './index.js'
+import { capitalizeText, findIngredientData } from './index.js'
 
 let dataIngredients = {}
 let matchValue = false
@@ -99,7 +99,7 @@ const onchangeAgregarRecetaCantidad = (e) => {
     }
 }
 
-const findIngredientData = (ingredient) => {
+/* const findIngredientData = (ingredient) => {
     let trademark = 'No encontrado'
     dataIngredients.some((e, i)=>{
         if(e.ingrediente.toLowerCase()===ingredient.toLowerCase()) {
@@ -109,7 +109,7 @@ const findIngredientData = (ingredient) => {
     return {
         trademark: trademark
     }
-}
+} */
 
 const addRowToTable = (e) => {
     e.preventDefault()
@@ -148,7 +148,7 @@ const addRowToTable = (e) => {
                     placeholder="Marca" 
                     required
                     readonly
-                    value="${capitalizeText(findIngredientData(inputIngredient.value).trademark)}"
+                    value="${capitalizeText(findIngredientData(dataIngredients, inputIngredient.value, null).trademark)}"
                 >
             </td>
             <td scope="row">

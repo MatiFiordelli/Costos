@@ -1,9 +1,9 @@
-import { capitalizeText } from './index.js'
+import { capitalizeText, findIngredientData } from './index.js'
 
+let dataIngredients = null
 window.onload = () => {
     new bootstrap.Modal(document.querySelector('#recipe-modal')).show()
     window.form = document.querySelector('#form')
-    window.dataIngredients = null
     window.tableBody = document.querySelector('#table tbody')
 
     fetch('https://costos-backend.vercel.app/ingredients')
@@ -15,7 +15,7 @@ window.onload = () => {
     const res = document.querySelector('#resolution').innerHTML = window.innerWidth +', '+window.innerHeight
 }
 
-const findIngredientData = (ingredient, quantity) => {
+/* const findIngredientData = (ingredient, quantity) => {
     let trademark = 'No encontrado'
     let price = 'No encontrado'
     let MU = 'No encontrado'
@@ -38,7 +38,7 @@ const findIngredientData = (ingredient, quantity) => {
         _id: _id,
         cost_value: costValue
     }
-}
+} */
 
 const addRowsToTable = (data) => {
     const recipe = data.receta
@@ -67,7 +67,7 @@ const addRowsToTable = (data) => {
                     placeholder="Marca" 
                     required
                     readonly
-                    value="${capitalizeText(findIngredientData(e.ingrediente, e.cantidad).trademark)}"
+                    value="${capitalizeText(findIngredientData(dataIngredients, e.ingrediente, e.cantidad).trademark)}"
                 >
             </td>
             <td scope="row">
@@ -91,7 +91,7 @@ const addRowsToTable = (data) => {
                     placeholder="0.00" 
                     required
                     readonly
-                    value="${findIngredientData(e.ingrediente, e.cantidad).price}"
+                    value="${findIngredientData(dataIngredients, e.ingrediente, null).price}"
                 >
             </td>
             <td scope="row">
@@ -102,7 +102,7 @@ const addRowsToTable = (data) => {
                     class="cost-value recipe-list-input form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
                     readonly
                     placeholder="Costo"
-                    value="${findIngredientData(e.ingrediente, e.cantidad).cost_value}"
+                    value="${findIngredientData(dataIngredients, e.ingrediente, e.cantidad).cost_value}"
                 >
             </td>
             <td scope="row">
@@ -113,7 +113,7 @@ const addRowsToTable = (data) => {
                     class="measurement-unit recipe-list-input form-control w-100 border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
                     readonly
                     placeholder="Unidad de medida"
-                    value="${capitalizeText(findIngredientData(e.ingrediente, e.cantidad).measurement_unit)}"
+                    value="${capitalizeText(findIngredientData(dataIngredients, e.ingrediente, e.cantidad).measurement_unit)}"
                 >
             </td>
             <td scope="row">
