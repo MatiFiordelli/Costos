@@ -4,8 +4,8 @@ const formRecipeMainInfo = async (config) => {
 
     formRecipeMainInfoTemplate.innerHTML = `
         <div class="d-flex flex-column gap-sm-2 p-5 mb-4 border">
-            <div class="container d-flex justify-content-between p-0">
-                <label for="recipe-name" class="form-label text-dark">Nombre de la receta</label>
+            <div class="container d-flex justify-content-between p-0 mb-1">
+                <label for="recipe-name" class="form-label text-dark m-0 w-50 text-truncate my-auto text-start">Nombre de la receta</label>
                 <input 
                     ${tableType!=='list' ? 'autofocus' : ''}
                     type="text" 
@@ -18,8 +18,8 @@ const formRecipeMainInfo = async (config) => {
                     ${tableType==='list' ? 'readonly' : ''}
                 >
             </div>
-            <div class="container d-flex justify-content-between p-0 pb-4">
-                <label for="category" class="form-label text-dark">Categoria</label>
+            <div class="container d-flex justify-content-between p-0 pb-4 mb-1">
+                <label for="category" class="form-label text-dark m-0 w-50 text-truncate my-auto text-start">Categoria</label>
                 ${tableType==='list' 
                 ?`<input 
                     type="text" 
@@ -58,8 +58,8 @@ const formRecipeMainInfo = async (config) => {
                 </select>`
                 }
             </div>
-            <div class="container d-flex justify-content-between p-0">
-                <label for="today-date" class="form-label ${tableType!=='list' ? 'text-black-50 fst-italic': ''}">
+            <div class="container d-flex justify-content-between p-0 mb-1">
+                <label for="today-date" class="form-label ${tableType!=='list' ? 'text-black-50 fst-italic': ''} m-0 w-50 text-truncate my-auto text-start">
                     ${tableType==='add' ? 'Fecha de creacion' : 'Fecha de modificacion'}
                 </label>
                 <input 
@@ -76,8 +76,8 @@ const formRecipeMainInfo = async (config) => {
             </div>
             ${tableType==='modify' 
             ?`
-                <div class="container d-flex justify-content-between p-0">
-                    <label for="_id" class="form-label text-black-50 fst-italic">Codigo</label>
+                <div class="container d-flex justify-content-between p-0 mb-1">
+                    <label for="_id" class="form-label text-black-50 fst-italic m-0 w-50 text-truncate my-auto text-start">Codigo</label>
                     <input 
                         type="text" 
                         title="Codigo"
@@ -91,8 +91,8 @@ const formRecipeMainInfo = async (config) => {
                     >
                 </div>`
                 :`
-                <div class="container d-flex justify-content-between p-0">
-                    <label for="autor" class="form-label ${tableType==='add' ? 'text-black-50 fst-italic': ''}">Autor</label>
+                <div class="container d-flex justify-content-between p-0 mb-1">
+                    <label for="autor" class="form-label ${tableType==='add' ? 'text-black-50 fst-italic': ''} m-0 w-50 text-truncate my-auto text-start">Autor</label>
                     <input 
                         type="text" 
                         title="Autor"

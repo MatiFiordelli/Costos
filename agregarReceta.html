@@ -25,8 +25,8 @@
 				<form-recipe-main-info config-2="add"></form-recipe-main-info>
 
 				<div class="d-flex flex-column gap-sm-2 p-5 mb-5 border">
-					<div class="container d-flex justify-content-between p-0">
-						<label for="ingredient" class="form-label text-dark">Ingrediente</label>
+					<div class="container d-flex justify-content-between p-0 mb-1">
+						<label for="ingredient" class="form-label text-dark m-0 w-50 text-truncate my-auto text-start">Ingrediente</label>
 						<input 
 							autocomplete="off"
 							type="text" 
@@ -43,8 +43,8 @@
 						>
 						</datalist>
 					</div>	
-					<div class="container d-flex justify-content-between p-0 pb-4">
-						<label for="quantity" class="form-label text-dark">Cantidad</label>
+					<div class="container d-flex justify-content-between p-0 pb-4 mb-1">
+						<label for="quantity" class="form-label text-dark m-0 w-50 text-truncate my-auto text-start">Cantidad</label>
 						<input 
 							type="number" 
 							title="Cantidad"
@@ -58,8 +58,8 @@
 							onkeyup="onchangeAgregarRecetaCantidad(event)"
 						>
 					</div>	
-					<div class="container d-flex justify-content-between p-0">
-						<label for="cost-value" class="form-label text-black-50 fst-italic">Valor de costo</label>
+					<div class="container d-flex justify-content-between p-0 mb-1">
+						<label for="cost-value" class="form-label text-black-50 fst-italic m-0 w-50 text-truncate my-auto text-start">Valor de costo</label>
 						<input 
 							type="text" 
 							title="Valor de costo"
@@ -70,8 +70,8 @@
 							tabindex="-1"
 						>
 					</div>	
-					<div class="container d-flex justify-content-between p-0">
-						<label for="price" class="form-label text-black-50 fst-italic">Precio</label>
+					<div class="container d-flex justify-content-between p-0 mb-1">
+						<label for="price" class="form-label text-black-50 fst-italic m-0 w-50 text-truncate my-auto text-start">Precio</label>
 						<input 
 							type="text" 
 							title="Precio"
@@ -82,8 +82,8 @@
 							tabindex="-1"
 						>
 					</div>				
-					<div class="container d-flex justify-content-between p-0">
-						<label for="measurement-unit" class="form-label text-black-50 fst-italic">Unidad de medida</label>
+					<div class="container d-flex justify-content-between p-0 mb-1">
+						<label for="measurement-unit" class="form-label text-black-50 fst-italic m-0 w-50 text-truncate my-auto text-start">Unidad de medida</label>
 						<input 
 							type="text" 
 							title="Unidad de medida"
@@ -94,8 +94,8 @@
 							tabindex="-1"
 						>
 					</div>
-					<div class="container d-flex justify-content-between p-0">
-						<label for="_id" class="form-label text-black-50 fst-italic">Codigo</label>
+					<div class="container d-flex justify-content-between p-0 mb-1">
+						<label for="_id" class="form-label text-black-50 fst-italic m-0 w-50 text-truncate my-auto text-start">Codigo</label>
 						<input 
 							type="text" 
 							title="Codigo"
@@ -118,50 +118,7 @@
 				</div>
 				
 				<div id="table-main-container" class="flex-column gap-sm-2">
-					<div class="table-responsive">
-						<table id="table" class="table table-responsive-sm table-striped table-bordered table-hover text-center align-middle text-nowrap">
-							<caption style="caption-side:top; text-align:center">Receta</caption>
-							<thead>
-								<tr class="table table-dark">
-									<th>
-										Acciones
-									</th>
-									<th scope="col">
-										Ingrediente
-									</th>
-									<th scope="col">
-                                        Marca
-                                    </th>
-									<th scope="col">
-										Cantidad
-									</th>
-									<th scope="col">
-										Precio
-									</th>
-									<th scope="col">
-										Costo
-									</th>
-									<th scope="col">
-										Unidad de medida
-									</th>
-									<th scope="col">
-										Codigo
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-								
-							</tbody>
-						</table>
-					</div>
-					<button
-						onmouseup="onsubmitNewRecipe()"
-						id="btn-submit-recipe"
-						class="btn btn-secondary btn-sm mt-2 mx-auto"
-						disabled
-					>
-						Enviar
-					</button>						
+					<table-recipe config="add"></table-recipe>
 				</div>
 			</form>			
 		</div>

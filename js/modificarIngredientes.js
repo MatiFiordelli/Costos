@@ -6,7 +6,7 @@ window.onload = () => {
 
 const onInputEnableBtn = () => {
     const btnSubmitIngredient = document.querySelector('#btn-submit-ingredients')
-    btnSubmitIngredient.disabled = false
+    if(btnSubmitIngredient.disabled) btnSubmitIngredient.disabled = false
 }
 
 const onChangeValue = (rowNumber) => {

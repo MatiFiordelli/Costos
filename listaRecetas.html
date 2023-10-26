@@ -30,66 +30,7 @@
                 <form-recipe-main-info config-2="list"></form-recipe-main-info>
 
                 <div class="table-responsive overflow-auto">
-                    <table 
-                        id="table" 
-                        class="table table-responsive-sm table-striped table-bordered table-hover text-center align-middle text-nowrap mt-2 ">
-                        <caption style="caption-side:top; text-align:center">Receta</caption>
-                        <thead>
-                            <tr class="table table-dark">
-                                <th scope="col">
-                                    Ingrediente
-                                </th>
-                                <th scope="col">
-                                    Marca
-                                </th>
-                                <th scope="col">
-                                    Cantidad
-                                </th>
-                                <th scope="col">
-                                    Precio
-                                </th>
-                                <th scope="col">
-                                    Costo
-                                </th>
-                                <th scope="col">
-                                    Unidad de medida
-                                </th>
-                                <th scope="col">
-                                    Codigo
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
-                        </tbody>
-                        <tfoot>
-                            <tr class="table table-secondary">
-                                <td 
-                                    scope="row" 
-                                    class="fw-bold align-middle"
-                                >
-                                    Costo Total: 
-                                </td>
-                                <td 
-                                    scope="row" 
-                                    colspan="6"
-                                    class="text-start fw-bolder"
-                                >
-                                    <input 
-                                        id="total-cost"
-                                        name="total_cost" 
-                                        type="text" 
-                                        title="Costo total"
-                                        class="form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none fw-bold" 
-                                        placeholder="0" 
-                                        aria-label="Costo total" 
-                                        required
-                                        readonly
-                                    >  
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
+                    <table-recipe config="list"></table-recipe>
                 </div>
             </form>
         </div>

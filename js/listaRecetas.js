@@ -4,7 +4,6 @@ let dataIngredients = null
 window.onload = () => {
     new bootstrap.Modal(document.querySelector('#recipe-modal')).show()
     window.form = document.querySelector('#form')
-    window.tableBody = document.querySelector('#table tbody')
 
     fetch('https://costos-backend.vercel.app/ingredients')
     .then((res) => res.json())
@@ -15,42 +14,17 @@ window.onload = () => {
     const res = document.querySelector('#resolution').innerHTML = window.innerWidth +', '+window.innerHeight
 }
 
-/* const findIngredientData = (ingredient, quantity) => {
-    let trademark = 'No encontrado'
-    let price = 'No encontrado'
-    let MU = 'No encontrado'
-    let _id = 'No encontrado'
-    let costValue = 'No encontrado'
-
-    dataIngredients.some((e, i)=>{
-        if(e.ingrediente.toLowerCase()===ingredient.toLowerCase()) {
-            trademark = dataIngredients[i].marca
-            price = dataIngredients[i].precio
-            MU = dataIngredients[i].unidad_medida 
-            _id = dataIngredients[i]._id
-            costValue = (price * quantity).toFixed(2)
-        }
-    })
-    return {
-        trademark: trademark,
-        price: price,
-        measurement_unit: MU,
-        _id: _id,
-        cost_value: costValue
-    }
-} */
-
 const addRowsToTable = (data) => {
+    window.tableBody = document.querySelector('#table tbody')
     const recipe = data.receta
     let tbodyContent = ''
     recipe.forEach((e)=>{
         tbodyContent += `        
         <tr>
-            <td scope="row">
+            <td scope="row" title="Ingrediente">
                 <input 
                     type="text" 
                     name="ingredient"
-                    title="Ingrediente"
                     class="ingredient recipe-list-input form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
                     placeholder="Nombre del ingrediente" 
                     required
@@ -58,23 +32,10 @@ const addRowsToTable = (data) => {
                     value="${capitalizeText(e.ingrediente)}"
                 >
             </td>
-            <td scope="row">
-                <input 
-                    name="trademark"
-                    type="text" 
-                    title="Marca"
-                    class="trademark recipe-list-input form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
-                    placeholder="Marca" 
-                    required
-                    readonly
-                    value="${capitalizeText(findIngredientData(dataIngredients, e.ingrediente, e.cantidad).trademark)}"
-                >
-            </td>
-            <td scope="row">
+            <td scope="row" title="Cantidad">
                 <input 
                     name="quantity"
                     type="text" 
-                    title="Cantidad"
                     class="quantity recipe-list-input form-control w-100 border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
                     placeholder="0" 
                     required
@@ -82,11 +43,21 @@ const addRowsToTable = (data) => {
                     value="${e.cantidad}"
                 >
             </td>
-            <td scope="row">
+            <td scope="row" title="Marca">
+                <input 
+                    name="trademark"
+                    type="text" 
+                    class="trademark recipe-list-input form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
+                    placeholder="Marca" 
+                    required
+                    readonly
+                    value="${capitalizeText(findIngredientData(dataIngredients, e.ingrediente, e.cantidad).trademark)}"
+                >
+            </td>
+            <td scope="row" title="Precio">
                 <input 
                     name="price"
                     type="number" 
-                    title="Precio"
                     class="price recipe-list-input form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
                     placeholder="0.00" 
                     required
@@ -94,33 +65,30 @@ const addRowsToTable = (data) => {
                     value="${findIngredientData(dataIngredients, e.ingrediente, null).price}"
                 >
             </td>
-            <td scope="row">
+            <td scope="row" title="Costo">
                 <input 
                     name="cost_value"
                     type="text" 
-                    title="Costo"
                     class="cost-value recipe-list-input form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
                     readonly
                     placeholder="Costo"
                     value="${findIngredientData(dataIngredients, e.ingrediente, e.cantidad).cost_value}"
                 >
             </td>
-            <td scope="row">
+            <td scope="row" title="Unidad de medida">
                 <input 
                     name="measurement_unit"
                     type="text" 
-                    title="Unidad de medida"
                     class="measurement-unit recipe-list-input form-control w-100 border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
                     readonly
                     placeholder="Unidad de medida"
                     value="${capitalizeText(findIngredientData(dataIngredients, e.ingrediente, e.cantidad).measurement_unit)}"
                 >
             </td>
-            <td scope="row">
+            <td scope="row" title="Codigo">
                 <input 
                     name="_id" 
                     type="text" 
-                    title="Codigo"
                     class="_id recipe-list-input form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none " 
                     placeholder="0" 
                     aria-label="Codigo" 
@@ -150,15 +118,16 @@ const selectedRow = (id) => {
     const autor = document.querySelector('#autor')
 
     fetch(`https://costos-backend.vercel.app/recipes/_id/${id}`)
-        .then((res) => res.json())
-        .then((data)=>{
-            addRowsToTable(data[0])
-            form.style.display = 'block'
-            recipeNamme.value = capitalizeText(data[0].nombre)
-            category.value = capitalizeText(data[0].categoria)
-            lastModification.value = data[0].ultima_modificacion
-            autor.value = capitalizeText(data[0].autor)
+    .then((res) => res.json())
+    .then((data)=>{
+        addRowsToTable(data[0])
+        form.style.display = 'block'
+        recipeNamme.value = capitalizeText(data[0].nombre)
+        category.value = capitalizeText(data[0].categoria)
+        lastModification.value = data[0].ultima_modificacion
+        autor.value = capitalizeText(data[0].autor)
     })
+    .catch((err)=>console.log(err))
 }
 
 window.selectedRow = selectedRow

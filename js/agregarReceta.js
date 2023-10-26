@@ -37,8 +37,6 @@ window.onload = () => {
     window.inputMU = document.querySelector('#measurement-unit')
     window.input_ID = document.querySelector('#_id')
     window.btnAddIngredient = document.querySelector('#btn-add-ingredient')
-    window.btnSubmitRecipe = document.querySelector('#btn-submit-recipe')
-    window.tableBody = document.querySelector('#table tbody')
     window.tableMainContainer = document.querySelector('#table-main-container')
     tableMainContainer.style.display = 'none' 
     window.autor = document.querySelector('#autor')
@@ -68,7 +66,7 @@ const oninputAgregarRecetaIngrediente = (e) => {
     matchValue = false
 
     const setElementsValues = (i) => {
-        inputPrice.value = dataIngredients[i].precio
+        inputPrice.value = dataIngredients[i].precio.toFixed(2)
         inputMU.value = capitalizeText(dataIngredients[i].unidad_medida)
         input_ID.value = dataIngredients[i]._id
         
@@ -99,21 +97,11 @@ const onchangeAgregarRecetaCantidad = (e) => {
     }
 }
 
-/* const findIngredientData = (ingredient) => {
-    let trademark = 'No encontrado'
-    dataIngredients.some((e, i)=>{
-        if(e.ingrediente.toLowerCase()===ingredient.toLowerCase()) {
-            trademark = e.marca
-        }
-    })
-    return {
-        trademark: trademark
-    }
-} */
-
 const addRowToTable = (e) => {
     e.preventDefault()
     tableMainContainer.classList.add('d-flex')
+    window.tableBody = document.querySelector('#table tbody')
+    const btnSubmitRecipe = document.querySelector('#btn-submit-recipe')
     btnSubmitRecipe.disabled = false
     //onclick="removeRow(event); onEmptyingTable(event)"
   
@@ -127,11 +115,10 @@ const addRowToTable = (e) => {
                     Eliminar
                 </button>
             </td>
-            <td scope="row">
+            <td scope="row" title="Ingrediente">
                 <input 
                     type="text" 
                     name="ingredient"
-                    title="Ingrediente"
                     class="ingredient form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
                     placeholder="Nombre del ingrediente" 
                     required
@@ -139,23 +126,10 @@ const addRowToTable = (e) => {
                     value="${inputIngredient.value}"
                 >
             </td>
-            <td scope="row">
-                <input 
-                    name="trademark"
-                    type="text" 
-                    title="Marca"
-                    class="trademark form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
-                    placeholder="Marca" 
-                    required
-                    readonly
-                    value="${capitalizeText(findIngredientData(dataIngredients, inputIngredient.value, null).trademark)}"
-                >
-            </td>
-            <td scope="row">
+            <td scope="row" title="Cantidad">
                 <input 
                     type="text" 
                     name="quantity"
-                    title="Cantidad"
                     class="quantity form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
                     placeholder="0" 
                     step="any"
@@ -166,20 +140,30 @@ const addRowToTable = (e) => {
                     value="${inputQuantity.value}"
                 >
             </td>
+            <td scope="row" title="Marca">
+                <input 
+                    name="trademark"
+                    type="text" 
+                    class="trademark form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
+                    placeholder="Marca" 
+                    required
+                    readonly
+                    value="${capitalizeText(findIngredientData(dataIngredients, inputIngredient.value, null).trademark)}"
+                >
+            </td>
             <td scope="row" title="Precio">
                 ${inputPrice.value}
             </td>
-            <td scope="row">
+            <td scope="row" title="Costo">
                 ${inputCostValue.value}
             </td>
-            <td scope="row">
+            <td scope="row" title="Unidad de medida">
                 ${capitalizeText(inputMU.value)}
             </td>
-            <td scope="row">
+            <td scope="row" title="Codigo">
                 <input 
                     type="text" 
                     name="_id" 
-                    title="Codigo"
                     class="_id form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none " 
                     placeholder="0" 
                     aria-label="Codigo" 
@@ -225,8 +209,6 @@ const onsubmitNewRecipe = () => {
             window.location.reload()      
         })
         .catch((err)=>console.log(err))
-        
-        
     }else{
         alert('Completar todos los campos correctamente')
     }

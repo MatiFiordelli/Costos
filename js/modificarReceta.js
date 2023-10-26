@@ -10,18 +10,22 @@ window.onload = () => {
     window.recipeName = document.querySelector('#recipe-name')
     window.category = document.querySelector('#category')
     window.codigo = document.querySelector('#_id')
-    window.tableMainContainer = document.querySelector('#table-main-container')
-    window.tableBody = document.querySelector('#table tbody')
+    window.tableMainContainer = document.querySelector('#table-main-container')   
    
     fetch('https://costos-backend.vercel.app/ingredients')
     .then((res) => res.json())
     .then((data) => {
         dataIngredients = data
-    })  
-    
+    })      
+}
+
+const onInputEnableBtn = () => {
+    const btnSubmitRecipe = document.querySelector('#btn-submit-recipe')
+    if(btnSubmitRecipe.disabled) btnSubmitRecipe.disabled = false
 }
 
 const updateMeasurementUnitSelect = (e) => {
+    onInputEnableBtn()
     const ingredient = e.closest('tr').querySelectorAll('.ingredient')[0]
     const quantity = e.closest('tr').querySelectorAll('.quantity')[0]
     const trademark = e.closest('tr').querySelectorAll('.trademark')[0]
@@ -40,13 +44,15 @@ const updateMeasurementUnitSelect = (e) => {
 }
 
 window.updateQuantity = (e) => {
+    onInputEnableBtn()
     const quantity = e.closest('tr').querySelectorAll('.quantity')[0]
     const price = e.closest('tr').querySelectorAll('.price')[0]
     const cost_value = e.closest('tr').querySelectorAll('.cost-value')[0]
-    cost_value.value = quantity.value * price.value
+    cost_value.value = (quantity.value * price.value).toFixed(2)
 }
 
 const addRowsToTable = (data) => {
+    window.tableBody = document.querySelector('#table tbody')
     const recipe = data.receta
     let tbodyContent = ''
     recipe.forEach((e)=>{
@@ -55,15 +61,14 @@ const addRowsToTable = (data) => {
             <td>
                 <button 
                     class="btn btn-dark btn-sm mx-auto"
-                    onmouseup="removeRow(event, null, null); onEmptyingTable('modifyrecipe')"
+                    onmouseup="{removeRow(event, 'function in modificaReceta', onInputEnableBtn); onEmptyingTable('modifyrecipe');}"
                 >
                     Eliminar
                 </button>
             </td>
-            <td scope="row">
+            <td scope="row" title="Ingrediente">
                 <select 
                     name="ingredient"
-                    title="Ingrediente"
                     class="ingredient select-ingredient form-select form-select-sm w-auto border-0 bg-transparent text-black text-center rounded-0" 
                     aria-label="Nombre del ingrediente"
                     placeholder="Elija el ingrediente" 
@@ -74,11 +79,10 @@ const addRowsToTable = (data) => {
                     <option value="${capitalizeText(e.ingrediente)}">${capitalizeText(e.ingrediente)}</option>
                 </select>
             </td>
-            <td scope="row">
+            <td scope="row" title="Cantidad">
                 <input 
                     type="number" 
                     name="quantity"
-                    title="Cantidad"
                     class="quantity form-control w-auto border-0 bg-transparent text-black text-center rounded-0" 
                     placeholder="0" 
                     step="any"
@@ -86,13 +90,12 @@ const addRowsToTable = (data) => {
                     max="999"
                     required
                     value="${e.cantidad}"
-                    onchange="updateQuantity(this)"
+                    oninput="updateQuantity(this)"
                 >
             </td>
-            <td scope="row">
+            <td scope="row" title="Marca">
                 <input 
                     type="text" 
-                    title="Marca"
                     name="trademark"
                     class="trademark form-control w-auto border-0 bg-transparent text-black-50 text-center rounded-0 shadow-none" 
                     placeholder="Marca" 
@@ -101,10 +104,9 @@ const addRowsToTable = (data) => {
                     value="${capitalizeText(findIngredientData(dataIngredients, e.ingrediente, null).trademark)}"
                 >
             </td>
-            <td scope="row">
+            <td scope="row" title="Precio">
                 <input 
                     type="number" 
-                    title="Precio"
                     name="price"
                     class="price recipe-list-input form-control w-auto border-0 bg-transparent text-black-50 text-center rounded-0 shadow-none" 
                     placeholder="0.00" 
@@ -113,10 +115,9 @@ const addRowsToTable = (data) => {
                     value="${findIngredientData(dataIngredients, e.ingrediente, null).price}"
                 >
             </td>
-            <td scope="row">
+            <td scope="row" title="Costo">
                 <input 
                     type="number" 
-                    title="Costo"
                     name="cost-value"
                     class="cost-value recipe-list-input form-control w-auto border-0 bg-transparent text-black-50 text-center rounded-0 shadow-none" 
                     readonly
@@ -124,10 +125,9 @@ const addRowsToTable = (data) => {
                     value="${findIngredientData(dataIngredients, e.ingrediente, e.cantidad).cost_value}"
                 >
             </td>
-            <td scope="row">
+            <td scope="row" title="Unidad de medida">
                 <input 
                     type="text" 
-                    title="Unidad de medida"
                     name="measurement-unit"
                     class="measurement-unit form-control w-auto border-0 bg-transparent text-black-50 text-center rounded-0 shadow-none fst-italic text-black-50" 
                     readonly
@@ -136,11 +136,10 @@ const addRowsToTable = (data) => {
                     tabindex="-1"
                 >
             </td>
-            <td scope="row">
+            <td scope="row" title="Codigo">
                 <input 
                     type="text" 
                     name="codigo" 
-                    title="Codigo"
                     class="codigo form-control w-auto border-0 bg-transparent text-black-50 text-center rounded-0 shadow-none fst-italic text-black-50" 
                     placeholder="0" 
                     aria-label="Codigo" 
@@ -154,6 +153,7 @@ const addRowsToTable = (data) => {
     })
     //onchange="this.closest('tr').querySelector('.measurement-unit').value=findIngredientData(this.value) "
     tableBody.innerHTML = tbodyContent + tableBody.innerHTML
+    
 }
 
 const selectedRow = (id) => { 
@@ -186,11 +186,12 @@ const selectedRow = (id) => {
 }
 
 const addNewIngredient = () => {
+    onInputEnableBtn()
     const lastRow = document.querySelector('#table tbody>tr:last-child')
     tableBody.appendChild(lastRow.cloneNode(true))
     const measurementUnit = document.querySelector('#table tbody>tr:last-child>td:nth-child(4)>input')
     const ingredient =      document.querySelector('#table tbody>tr:last-child>td:nth-child(2) option')
-    measurementUnit.value= findIngredientData(ingredient.value)['measurement_unit']
+    measurementUnit.value= findIngredientData(dataIngredients, ingredient.value, null).measurement_unit
 }
 
 const onsubmitModifiedRecipe = () => {
@@ -220,11 +221,10 @@ const onsubmitModifiedRecipe = () => {
             body: JSON.stringify(objRecipe)
         })
         .then(()=>{
-            console.log('receta enviada')        
+            alert('Receta modificada')
+            window.location.reload()
         })
         .catch((err)=>console.log(err))
-        
-        window.location.reload()
     }else{
         alert('Completar todos los campos correctamente')
     }

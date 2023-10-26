@@ -18,10 +18,18 @@ input::placeholder {
   color: rgba(0, 0, 0, 0.5) !important;
 }
 
+label {
+  white-space: nowrap;
+}
+
 /* input:read-only:not(.recipe-list-input), input:read-only:focus:not(.recipe-list-input), input:read-only::placeholder{
     background-color:  transparent;
     color: #AAA !important;
 } */
+body > section .modal-content {
+  width: 90vw !important;
+}
+
 @media only screen and (min-width: 1800px) {
   * {
     font-size: 1.1vw !important;
@@ -31,10 +39,15 @@ input::placeholder {
   }
 }
 @media only screen and (max-width: 1199.98px) {
+  body > section.p-5, body > section {
+    /* & .modal-content{
+        max-width: 95%;
+    } */
+  }
   body > section.p-5.p-5, body > section.p-5 {
     padding: 9px !important;
   }
-  body > section.p-5 div:first-child, body > section div:first-child {
+  body > section.p-5 div:first-child:not(.modal-content), body > section div:first-child:not(.modal-content) {
     max-width: 100%;
   }
 }
@@ -64,12 +77,12 @@ input::placeholder {
   }
   body form > div {
     flex-direction: column;
+    /* & div{
+        margin-bottom:5px;
+    } */
   }
   body form > div .label {
     margin: 5px;
-  }
-  body form > div div {
-    margin-bottom: 5px;
   }
   .tabla {
     padding: 0 !important;

@@ -30,6 +30,11 @@ async function removeRow(e, origin, _id) {
                 ? t.deleteRow(i)
                 : alert('Ocurrió un error, no se pudo eliminar el producto')
         }
+        if(origin === 'function in modificaReceta') {
+            const thisIsTheFunction_onInputEnableBtn = _id
+            thisIsTheFunction_onInputEnableBtn()
+            t.deleteRow(i)
+        }
         if (origin === null) {
             t.deleteRow(i)
         }

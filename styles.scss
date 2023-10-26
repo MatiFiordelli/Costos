@@ -14,10 +14,22 @@ th{
 input::placeholder{
     color: rgba(0,0,0,.5) !important;
 }
+
+label{
+    white-space: nowrap;
+}
 /* input:read-only:not(.recipe-list-input), input:read-only:focus:not(.recipe-list-input), input:read-only::placeholder{
     background-color:  transparent;
     color: #AAA !important;
 } */
+
+body{
+    &>section{
+        & .modal-content{
+            width: 90vw !important;            
+        }
+    }    
+}
 
 @media only screen and (min-width:1800px){
     *{
@@ -40,9 +52,12 @@ input::placeholder{
             &.p-5{
                 padding:9px !important;
             }
-            & div:first-child{
+            & div:first-child:not(.modal-content){
                 max-width: 100%;
             }
+            /* & .modal-content{
+                max-width: 95%;
+            } */
         }    
     }
 }
@@ -84,9 +99,9 @@ input::placeholder{
                     margin:5px;
                 }
     
-                & div{
+                /* & div{
                     margin-bottom:5px;
-                }
+                } */
             }
         }
     }
