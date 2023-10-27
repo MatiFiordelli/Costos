@@ -99,24 +99,15 @@ const templateTableRecipe = async (config) => {
                     }
 
                 </div>
-                /* Unificarlos!! */
-                ${tableType==='modify'
+                ${tableType!=='list' 
                 ?`
                 <button
-                    onmouseup="onsubmitModifiedRecipe()"
-                    id="btn-submit-recipe"
-                    class="btn btn-secondary btn-sm mt-2 mx-auto"
-                    disabled
-                >
-                    Enviar
-                </button>`
-                :''
-                }
-
-                ${tableType==='add'
-                ?`
-                <button
-                    onmouseup="onsubmitNewRecipe()"
+                    onmouseup=${tableType==='add' 
+                                    ? 'onsubmitNewRecipe()' 
+                                    : tableType==='modify' 
+                                        ? 'onsubmitModifiedRecipe()' 
+                                        : ''
+                                }
                     id="btn-submit-recipe"
                     class="btn btn-secondary btn-sm mt-2 mx-auto"
                     disabled
@@ -126,7 +117,6 @@ const templateTableRecipe = async (config) => {
                 :''
                 }
             `
-
                 const el = tableRecipes.content.firstElementChild
                 const charactersToBeRemoved = el.firstChild
                 el.removeChild(charactersToBeRemoved)

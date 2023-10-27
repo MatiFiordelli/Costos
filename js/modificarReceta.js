@@ -8,7 +8,9 @@ window.onload = () => {
     window.todayDate = document.querySelector('#today-date')
     todayDate.value = new Date().toLocaleDateString()
     window.recipeName = document.querySelector('#recipe-name')
+    recipeName.oninput = ()=> onInputEnableBtn()
     window.category = document.querySelector('#category')
+    category.onchange = ()=> onInputEnableBtn()
     window.codigo = document.querySelector('#_id')
     window.tableMainContainer = document.querySelector('#table-main-container')   
    
@@ -19,7 +21,7 @@ window.onload = () => {
     })      
 }
 
-const onInputEnableBtn = () => {
+window.onInputEnableBtn = () => {
     const btnSubmitRecipe = document.querySelector('#btn-submit-recipe')
     if(btnSubmitRecipe.disabled) btnSubmitRecipe.disabled = false
 }
@@ -33,7 +35,6 @@ const updateMeasurementUnitSelect = (e) => {
     const cost_value = e.closest('tr').querySelectorAll('.cost-value')[0]
     const measurementUnit = e.closest('tr').querySelectorAll('.measurement-unit')[0]
     const codigo = e.closest('tr').querySelectorAll('.codigo')[0]
-
     const ingredientData = findIngredientData(dataIngredients, ingredient.value, quantity.value)
 
     trademark.value = capitalizeText(ingredientData.trademark)
@@ -61,7 +62,7 @@ const addRowsToTable = (data) => {
             <td>
                 <button 
                     class="btn btn-dark btn-sm mx-auto"
-                    onmouseup="{removeRow(event, 'function in modificaReceta', onInputEnableBtn); onEmptyingTable('modifyrecipe');}"
+                    onmouseup="removeRow(event, 'function in modificaReceta', onInputEnableBtn); onEmptyingTable('modifyrecipe');"
                 >
                     Eliminar
                 </button>

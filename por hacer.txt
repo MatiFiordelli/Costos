@@ -7,6 +7,7 @@ la resolucion de mi celular tiene el font-size muy pequeño, ver el caso de 'fec
 los id y name de la fecha en form, poner nombre adecuado, corregir
 ver los alerts de los fetchs, que todos tengan ese aviso de confirmacion
 
+
 deberia tener un boton deshacer en modificar receta
 poner los fetchs apartes
 corregir al ingles web y base de datos
