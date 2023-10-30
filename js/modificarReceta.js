@@ -1,4 +1,5 @@
 import { capitalizeText, findIngredientData } from '../js/index.js'
+import templateTableRecipeTbodyContent from './templates/tableRecipeTbodyContentTemplate.js'
 
 let dataIngredients = null
 window.onload = () => {
@@ -52,109 +53,24 @@ window.updateQuantity = (e) => {
     cost_value.value = (quantity.value * price.value).toFixed(2)
 }
 
-const addRowsToTable = (data) => {
+const addRowsToTable = async (data) => {
     window.tableBody = document.querySelector('#table tbody')
     const recipe = data.receta
-    let tbodyContent = ''
-    recipe.forEach((e)=>{
-        tbodyContent += `        
-        <tr>
-            <td>
-                <button 
-                    class="btn btn-dark btn-sm mx-auto"
-                    onmouseup="removeRow(event, 'function in modificaReceta', onInputEnableBtn); onEmptyingTable('modifyrecipe');"
-                >
-                    Eliminar
-                </button>
-            </td>
-            <td scope="row" title="Ingrediente">
-                <select 
-                    name="ingredient"
-                    class="ingredient select-ingredient form-select form-select-sm w-auto border-0 bg-transparent text-black text-center rounded-0" 
-                    aria-label="Nombre del ingrediente"
-                    placeholder="Elija el ingrediente" 
-                    required
-                    data-ingredient="${capitalizeText(e.ingrediente)}"
-                    onchange="updateMeasurementUnitSelect(this)"
-                > 
-                    <option value="${capitalizeText(e.ingrediente)}">${capitalizeText(e.ingrediente)}</option>
-                </select>
-            </td>
-            <td scope="row" title="Cantidad">
-                <input 
-                    type="number" 
-                    name="quantity"
-                    class="quantity form-control w-auto border-0 bg-transparent text-black text-center rounded-0" 
-                    placeholder="0" 
-                    step="any"
-                    min="0.001"
-                    max="999"
-                    required
-                    value="${e.cantidad}"
-                    oninput="updateQuantity(this)"
-                >
-            </td>
-            <td scope="row" title="Marca">
-                <input 
-                    type="text" 
-                    name="trademark"
-                    class="trademark form-control w-auto border-0 bg-transparent text-black-50 text-center rounded-0 shadow-none" 
-                    placeholder="Marca" 
-                    required
-                    readonly
-                    value="${capitalizeText(findIngredientData(dataIngredients, e.ingrediente, null).trademark)}"
-                >
-            </td>
-            <td scope="row" title="Precio">
-                <input 
-                    type="number" 
-                    name="price"
-                    class="price recipe-list-input form-control w-auto border-0 bg-transparent text-black-50 text-center rounded-0 shadow-none" 
-                    placeholder="0.00" 
-                    required
-                    readonly
-                    value="${findIngredientData(dataIngredients, e.ingrediente, null).price}"
-                >
-            </td>
-            <td scope="row" title="Costo">
-                <input 
-                    type="number" 
-                    name="cost-value"
-                    class="cost-value recipe-list-input form-control w-auto border-0 bg-transparent text-black-50 text-center rounded-0 shadow-none" 
-                    readonly
-                    placeholder="Costo"
-                    value="${findIngredientData(dataIngredients, e.ingrediente, e.cantidad).cost_value}"
-                >
-            </td>
-            <td scope="row" title="Unidad de medida">
-                <input 
-                    type="text" 
-                    name="measurement-unit"
-                    class="measurement-unit form-control w-auto border-0 bg-transparent text-black-50 text-center rounded-0 shadow-none fst-italic text-black-50" 
-                    readonly
-                    placeholder="Unidad de medida"
-                    value="${capitalizeText(findIngredientData(dataIngredients, e.ingrediente, null).measurement_unit)}"
-                    tabindex="-1"
-                >
-            </td>
-            <td scope="row" title="Codigo">
-                <input 
-                    type="text" 
-                    name="codigo" 
-                    class="codigo form-control w-auto border-0 bg-transparent text-black-50 text-center rounded-0 shadow-none fst-italic text-black-50" 
-                    placeholder="0" 
-                    aria-label="Codigo" 
-                    required
-                    readonly
-                    value="${e.codigo}"
-                >
-            </td>
-        </tr>
-    `
+    const config = 'modify'
+
+    recipe.forEach(async (e)=>{
+        const objRow = {
+            ingredient: capitalizeText(e.ingrediente),
+            quantity: e.cantidad,
+            trademark: capitalizeText(findIngredientData(dataIngredients, e.ingrediente, null).trademark),
+            price: findIngredientData(dataIngredients, e.ingrediente, null).price,
+            cost: findIngredientData(dataIngredients, e.ingrediente, e.cantidad).cost_value,
+            measurement_unit: capitalizeText(findIngredientData(dataIngredients, e.ingrediente, null).measurement_unit),
+            _id: e.codigo
+        }
+        const template = await templateTableRecipeTbodyContent(config, objRow)
+        tableBody.appendChild(template.content.cloneNode(true))
     })
-    //onchange="this.closest('tr').querySelector('.measurement-unit').value=findIngredientData(this.value) "
-    tableBody.innerHTML = tbodyContent + tableBody.innerHTML
-    
 }
 
 const selectedRow = (id) => { 
@@ -190,9 +106,6 @@ const addNewIngredient = () => {
     onInputEnableBtn()
     const lastRow = document.querySelector('#table tbody>tr:last-child')
     tableBody.appendChild(lastRow.cloneNode(true))
-    const measurementUnit = document.querySelector('#table tbody>tr:last-child>td:nth-child(4)>input')
-    const ingredient =      document.querySelector('#table tbody>tr:last-child>td:nth-child(2) option')
-    measurementUnit.value= findIngredientData(dataIngredients, ingredient.value, null).measurement_unit
 }
 
 const onsubmitModifiedRecipe = () => {

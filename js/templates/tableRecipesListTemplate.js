@@ -61,8 +61,7 @@ const templateTableRecipesList = async (config) => {
 
                         </tbody>
                     </table>
-                </div>
-            `
+                </div>`
 
                 const el = tableRecipes.content.firstElementChild
                 const charactersToBeRemoved = el.firstChild

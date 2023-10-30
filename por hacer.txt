@@ -1,16 +1,17 @@
-
+Errores:
 corregir id o class de codigo / _id y reemplazar por _id_recipe y _id_ingredient o algo asi
-hacer infinite scroll
 ver bien bien las fechas!!!
 en todos los findIngredientData() creo q el if no deberia ser con ingrediente sino con codigo!!!
 la resolucion de mi celular tiene el font-size muy pequeño, ver el caso de 'fecha de creacion
 los id y name de la fecha en form, poner nombre adecuado, corregir
-ver los alerts de los fetchs, que todos tengan ese aviso de confirmacion
+en los templates, no tiene q tener fetchs, pasarle el json por paramentro a la funcion
+sacar recipe-list-input si no se usa
 
-
+Funcionalidades / Cambios:
 deberia tener un boton deshacer en modificar receta
 poner los fetchs apartes
 corregir al ingles web y base de datos
 componentizar lo que falte
 hacer login para tener el autor
 poner spinners
+hacer infinite scroll

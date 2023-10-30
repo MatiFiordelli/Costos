@@ -1,4 +1,5 @@
 import { capitalizeText, findIngredientData } from './index.js'
+import templateTableRecipeTbodyContent from './templates/tableRecipeTbodyContentTemplate.js'
 
 let dataIngredients = {}
 let matchValue = false
@@ -89,7 +90,7 @@ const oninputAgregarRecetaIngrediente = (e) => {
 
 const onchangeAgregarRecetaCantidad = (e) => {
     if (inputQuantity.value > 0 && matchValue){
-        inputCostValue.value = inputPrice.value * e.target.value
+        inputCostValue.value = (inputPrice.value * e.target.value).toFixed(2)
         btnAddIngredient.disabled = false
     }else{
         inputCostValue.value = null
@@ -97,84 +98,26 @@ const onchangeAgregarRecetaCantidad = (e) => {
     }
 }
 
-const addRowToTable = (e) => {
+const addRowToTable = async (e) => {
     e.preventDefault()
     tableMainContainer.classList.add('d-flex')
     window.tableBody = document.querySelector('#table tbody')
     const btnSubmitRecipe = document.querySelector('#btn-submit-recipe')
     btnSubmitRecipe.disabled = false
-    //onclick="removeRow(event); onEmptyingTable(event)"
-  
-    const tbodyContent = `
-        <tr>
-            <td>
-                <button 
-                    class="btn btn-dark btn-sm mx-auto"
-                    onmouseup="removeRow(event, null, null); onEmptyingTable('addrecipe')"
-                >
-                    Eliminar
-                </button>
-            </td>
-            <td scope="row" title="Ingrediente">
-                <input 
-                    type="text" 
-                    name="ingredient"
-                    class="ingredient form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
-                    placeholder="Nombre del ingrediente" 
-                    required
-                    readonly
-                    value="${inputIngredient.value}"
-                >
-            </td>
-            <td scope="row" title="Cantidad">
-                <input 
-                    type="text" 
-                    name="quantity"
-                    class="quantity form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
-                    placeholder="0" 
-                    step="any"
-                    min="0"
-                    max="999"
-                    required
-                    readonly
-                    value="${inputQuantity.value}"
-                >
-            </td>
-            <td scope="row" title="Marca">
-                <input 
-                    name="trademark"
-                    type="text" 
-                    class="trademark form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
-                    placeholder="Marca" 
-                    required
-                    readonly
-                    value="${capitalizeText(findIngredientData(dataIngredients, inputIngredient.value, null).trademark)}"
-                >
-            </td>
-            <td scope="row" title="Precio">
-                ${inputPrice.value}
-            </td>
-            <td scope="row" title="Costo">
-                ${inputCostValue.value}
-            </td>
-            <td scope="row" title="Unidad de medida">
-                ${capitalizeText(inputMU.value)}
-            </td>
-            <td scope="row" title="Codigo">
-                <input 
-                    type="text" 
-                    name="_id" 
-                    class="_id form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none " 
-                    placeholder="0" 
-                    aria-label="Codigo" 
-                    required
-                    readonly
-                    value="${input_ID.value}"
-                >
-            </td>
-        </tr>
-    `
-    tableBody.innerHTML += tbodyContent
+   
+    const config = 'add'
+    const objRow = {
+        ingredient: inputIngredient.value,
+        quantity: inputQuantity.value,
+        trademark: capitalizeText(findIngredientData(dataIngredients, inputIngredient.value, null).trademark),
+        price: inputPrice.value,
+        cost: inputCostValue.value,
+        measurement_unit: capitalizeText(inputMU.value),
+        _id: input_ID.value
+    }
+    const template = await templateTableRecipeTbodyContent(config, objRow)
+    tableBody.appendChild(template.content.cloneNode(true)) 
+    
     initElementsValues(true)
 }
 

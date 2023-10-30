@@ -1,4 +1,6 @@
 import { capitalizeText, findIngredientData } from './index.js'
+import templateTableRecipeTbodyContent from './templates/tableRecipeTbodyContentTemplate.js'
+
 
 let dataIngredients = null
 window.onload = () => {
@@ -14,101 +16,30 @@ window.onload = () => {
     const res = document.querySelector('#resolution').innerHTML = window.innerWidth +', '+window.innerHeight
 }
 
-const addRowsToTable = (data) => {
+const addRowsToTable = async (data) => {
     window.tableBody = document.querySelector('#table tbody')
     const recipe = data.receta
-    let tbodyContent = ''
-    recipe.forEach((e)=>{
-        tbodyContent += `        
-        <tr>
-            <td scope="row" title="Ingrediente">
-                <input 
-                    type="text" 
-                    name="ingredient"
-                    class="ingredient recipe-list-input form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
-                    placeholder="Nombre del ingrediente" 
-                    required
-                    readonly
-                    value="${capitalizeText(e.ingrediente)}"
-                >
-            </td>
-            <td scope="row" title="Cantidad">
-                <input 
-                    name="quantity"
-                    type="text" 
-                    class="quantity recipe-list-input form-control w-100 border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
-                    placeholder="0" 
-                    required
-                    readonly
-                    value="${e.cantidad}"
-                >
-            </td>
-            <td scope="row" title="Marca">
-                <input 
-                    name="trademark"
-                    type="text" 
-                    class="trademark recipe-list-input form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
-                    placeholder="Marca" 
-                    required
-                    readonly
-                    value="${capitalizeText(findIngredientData(dataIngredients, e.ingrediente, e.cantidad).trademark)}"
-                >
-            </td>
-            <td scope="row" title="Precio">
-                <input 
-                    name="price"
-                    type="number" 
-                    class="price recipe-list-input form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
-                    placeholder="0.00" 
-                    required
-                    readonly
-                    value="${findIngredientData(dataIngredients, e.ingrediente, null).price}"
-                >
-            </td>
-            <td scope="row" title="Costo">
-                <input 
-                    name="cost_value"
-                    type="text" 
-                    class="cost-value recipe-list-input form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
-                    readonly
-                    placeholder="Costo"
-                    value="${findIngredientData(dataIngredients, e.ingrediente, e.cantidad).cost_value}"
-                >
-            </td>
-            <td scope="row" title="Unidad de medida">
-                <input 
-                    name="measurement_unit"
-                    type="text" 
-                    class="measurement-unit recipe-list-input form-control w-100 border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
-                    readonly
-                    placeholder="Unidad de medida"
-                    value="${capitalizeText(findIngredientData(dataIngredients, e.ingrediente, e.cantidad).measurement_unit)}"
-                >
-            </td>
-            <td scope="row" title="Codigo">
-                <input 
-                    name="_id" 
-                    type="text" 
-                    class="_id recipe-list-input form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none " 
-                    placeholder="0" 
-                    aria-label="Codigo" 
-                    required
-                    readonly
-                    value="${e.codigo}"
-                >
-            </td>
-        </tr>
-    `
+    const config = 'list'
+    let totalCost = 0
+
+    let totalCostPromise = recipe.map(async (e)=>{
+        const objRow = {
+            ingredient: capitalizeText(e.ingrediente),
+            quantity: e.cantidad,
+            trademark: capitalizeText(findIngredientData(dataIngredients, e.ingrediente, e.cantidad).trademark),
+            price: findIngredientData(dataIngredients, e.ingrediente, null).price,
+            cost: findIngredientData(dataIngredients, e.ingrediente, e.cantidad).cost_value,
+            measurement_unit: capitalizeText(findIngredientData(dataIngredients, e.ingrediente, e.cantidad).measurement_unit),
+            _id: e.codigo
+        }
+        const template = await templateTableRecipeTbodyContent(config, objRow)
+        tableBody.appendChild(template.content.cloneNode(true))
+        totalCost += Number(objRow.cost)
     })
-    
-    tableBody.innerHTML = tbodyContent + tableBody.innerHTML
 
-    const allCosts = document.querySelectorAll('.cost-value')
-    const totalCost = Array.from(allCosts).reduce((accum, currentValue) => {
-            return accum + Number(currentValue.value)
-    }, 0)
-
-    document.querySelector('#total-cost').value = '$' + totalCost.toFixed(2)
+    Promise.all(totalCostPromise).then(()=>{
+        document.querySelector('#total-cost').value = '$' + totalCost.toFixed(2)
+    })
 }
 
 const selectedRow = (id) => { 
