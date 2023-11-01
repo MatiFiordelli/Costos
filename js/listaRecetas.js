@@ -17,13 +17,14 @@ const addRowsToTable = async (data) => {
     let totalCost = 0
 
     let totalCostPromise = recipe.map(async (e)=>{
+
         const objRow = {
             ingredient: capitalizeText(e.ingrediente),
             quantity: e.cantidad,
-            trademark: capitalizeText(findIngredientData(dataIngredients, e.ingrediente, e.cantidad).trademark),
-            price: findIngredientData(dataIngredients, e.ingrediente, null).price,
-            cost: findIngredientData(dataIngredients, e.ingrediente, e.cantidad).cost_value,
-            measurement_unit: capitalizeText(findIngredientData(dataIngredients, e.ingrediente, e.cantidad).measurement_unit),
+            trademark: capitalizeText(findIngredientData(dataIngredients, e.codigo, e.cantidad).trademark),
+            price: findIngredientData(dataIngredients, e.codigo, null).price,
+            cost: findIngredientData(dataIngredients, e.codigo, e.cantidad).cost_value,
+            measurement_unit: capitalizeText(findIngredientData(dataIngredients, e.codigo, e.cantidad).measurement_unit),
             _id: e.codigo
         }
         const template = await templateTableRecipeTbodyContent(config, objRow)

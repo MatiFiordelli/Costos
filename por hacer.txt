@@ -1,6 +1,5 @@
 Errores:
 corregir id o class de codigo / _id y reemplazar por _id_recipe y _id_ingredient o algo asi
-en todos los findIngredientData() creo q el if no deberia ser con ingrediente sino con codigo!!!
 
 Funcionalidades / Cambios:
 deberia tener un boton deshacer en modificar receta

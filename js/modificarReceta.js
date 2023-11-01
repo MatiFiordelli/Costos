@@ -32,7 +32,7 @@ const updateMeasurementUnitSelect = (e) => {
     const cost_value = e.closest('tr').querySelectorAll('.cost-value')[0]
     const measurementUnit = e.closest('tr').querySelectorAll('.measurement-unit')[0]
     const codigo = e.closest('tr').querySelectorAll('.codigo')[0]
-    const ingredientData = findIngredientData(dataIngredients, ingredient.value, quantity.value)
+    const ingredientData = findIngredientData(dataIngredients, e.value, quantity.value)
 
     trademark.value = capitalizeText(ingredientData.trademark)
     price.value = ingredientData.price
@@ -58,10 +58,10 @@ const addRowsToTable = async (data) => {
         const objRow = {
             ingredient: capitalizeText(e.ingrediente),
             quantity: e.cantidad,
-            trademark: capitalizeText(findIngredientData(dataIngredients, e.ingrediente, null).trademark),
-            price: findIngredientData(dataIngredients, e.ingrediente, null).price,
-            cost: findIngredientData(dataIngredients, e.ingrediente, e.cantidad).cost_value,
-            measurement_unit: capitalizeText(findIngredientData(dataIngredients, e.ingrediente, null).measurement_unit),
+            trademark: capitalizeText(findIngredientData(dataIngredients, e.codigo, null).trademark),
+            price: findIngredientData(dataIngredients, e.codigo, null).price,
+            cost: findIngredientData(dataIngredients, e.codigo, e.cantidad).cost_value,
+            measurement_unit: capitalizeText(findIngredientData(dataIngredients, e.codigo, null).measurement_unit),
             _id: e.codigo
         }
         const template = await templateTableRecipeTbodyContent(config, objRow)
@@ -84,7 +84,7 @@ const selectedRow = (id) => {
         
         dataIngredients.forEach((e, i) => {
             const node = document.createElement('option')
-            node.value = capitalizeText(e.ingrediente)
+            node.value = capitalizeText(e._id)
             node.innerHTML = capitalizeText(e.ingrediente)
             template.content.appendChild(node)
         })
@@ -138,5 +138,5 @@ const onsubmitModifiedRecipe = () => {
 window.selectedRow = selectedRow
 window.addNewIngredient = addNewIngredient
 window.onsubmitModifiedRecipe = onsubmitModifiedRecipe
-window.findIngredientData = findIngredientData
+//window.findIngredientData = findIngredientData
 window.updateMeasurementUnitSelect = updateMeasurementUnitSelect

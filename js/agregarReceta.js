@@ -64,7 +64,7 @@ const oninputAgregarRecetaIngrediente = (e) => {
     matchValue = false
 
     const setElementsValues = (i) => {
-        inputPrice.value = dataIngredients[i].precio.toFixed(2)
+        inputPrice.value = Number(dataIngredients[i].precio).toFixed(2)
         inputMU.value = capitalizeText(dataIngredients[i].unidad_medida)
         input_ID.value = dataIngredients[i]._id
         
@@ -107,7 +107,7 @@ const addRowToTable = async (e) => {
     const objRow = {
         ingredient: inputIngredient.value,
         quantity: inputQuantity.value,
-        trademark: capitalizeText(findIngredientData(dataIngredients, inputIngredient.value, null).trademark),
+        trademark: capitalizeText(findIngredientData(dataIngredients, input_ID.value, null).trademark),
         price: inputPrice.value,
         cost: inputCostValue.value,
         measurement_unit: capitalizeText(inputMU.value),

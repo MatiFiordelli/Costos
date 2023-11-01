@@ -19,7 +19,7 @@ export const capitalizeText = (text) => {
     return text[0].toUpperCase() + text.slice(1).toLowerCase()    
 }
 
-export const findIngredientData = (dataIngredients, ingredient, quantity) => {
+export const findIngredientData = (dataIngredients, codigo, quantity) => {
     const msg = 'No encontrado'
     let _id = msg
     let trademark = msg
@@ -30,7 +30,7 @@ export const findIngredientData = (dataIngredients, ingredient, quantity) => {
     let last_modification = msg
 
     dataIngredients.some((e, i)=>{
-        if(e.ingrediente.toLowerCase()===ingredient.toLowerCase()) {
+        if(e._id===codigo) {
             _id = dataIngredients[i]._id
             trademark = dataIngredients[i].marca
             price = dataIngredients[i].precio

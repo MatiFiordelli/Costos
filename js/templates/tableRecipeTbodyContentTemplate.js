@@ -43,7 +43,7 @@ const templateTableRecipeTbodyContent = async (config, objRow) => {
                     data-ingredient="${objRow.ingredient}"
                     onchange="updateMeasurementUnitSelect(this)"
                 > 
-                    <option value="${objRow.ingredient}">${objRow.ingredient}</option>
+                    <option value="${objRow._id}">${objRow.ingredient}</option>
                 </select>`
                 :''
                 }
