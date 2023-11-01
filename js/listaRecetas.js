@@ -1,17 +1,11 @@
 import { capitalizeText, findIngredientData } from './index.js'
 import templateTableRecipeTbodyContent from './templates/tableRecipeTbodyContentTemplate.js'
+import { fetchData } from './services/fetchData.js'
 
-
-let dataIngredients = null
-window.onload = () => {
+window.onload = async () => {
     new bootstrap.Modal(document.querySelector('#recipe-modal')).show()
     window.form = document.querySelector('#form')
-
-    fetch('https://costos-backend.vercel.app/ingredients')
-    .then((res) => res.json())
-    .then((data) => {
-        dataIngredients = data
-    })  
+    window.dataIngredients = await fetchData('ingredients')
 
     const res = document.querySelector('#resolution').innerHTML = window.innerWidth +', '+window.innerHeight
 }
@@ -48,8 +42,7 @@ const selectedRow = (id) => {
     const lastModification = document.querySelector('#today-date')
     const autor = document.querySelector('#autor')
 
-    fetch(`https://costos-backend.vercel.app/recipes/_id/${id}`)
-    .then((res) => res.json())
+    fetchData(`recipes/_id/${id}`)
     .then((data)=>{
         addRowsToTable(data[0])
         form.style.display = 'block'

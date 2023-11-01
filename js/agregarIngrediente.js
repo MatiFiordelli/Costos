@@ -1,6 +1,6 @@
 import { capitalizeText } from './index.js'
+import { postData } from './services/fetchData.js'
 
-//let fetchedData = {}
 window.onload = () => {
     const todayDate = document.querySelector('#today-date')
     todayDate.value = new Date().toLocaleDateString()
@@ -29,11 +29,7 @@ const onsubmitNewIngredient = () => {
             autor: autor.value
         }
         
-        fetch('https://costos-backend.vercel.app/addingredient/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify(objRecipe)
-        })
+        postData('addingredient/', objRecipe)
         .then(()=>{
             alert('Ingrediente agregado')
             window.location.reload()

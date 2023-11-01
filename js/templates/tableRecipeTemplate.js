@@ -1,10 +1,10 @@
-import { fetchData } from "../services/fetchData.js"
-import { capitalizeText } from '../index.js'
+/* import { fetchData } from "../services/fetchData.js"
+import { capitalizeText } from '../index.js' */
 
 const templateTableRecipe = async (config) => {
-    const data = await fetchData('recipes')
-        .then((res) => {
-            if (res !== undefined) {
+    /* const data = await fetchData('recipes')
+        .then((res) => { 
+            if (res !== undefined) {*/
                 /* const displayValue = config.split('/')[0]
                 const tableType = config.split('/')[1] */
                 const tableType = config
@@ -122,9 +122,9 @@ const templateTableRecipe = async (config) => {
                 el.removeChild(charactersToBeRemoved)
 
                 return tableRecipes
-            }
-        })
+           /* }
+         })
 
-    return data
+    return data */
 }
 export default templateTableRecipe

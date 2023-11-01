@@ -18,10 +18,6 @@ input::placeholder{
 label{
     white-space: nowrap;
 }
-/* input:read-only:not(.recipe-list-input), input:read-only:focus:not(.recipe-list-input), input:read-only::placeholder{
-    background-color:  transparent;
-    color: #AAA !important;
-} */
 
 body{
     &>section{

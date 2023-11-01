@@ -1,29 +1,26 @@
 import { capitalizeText, findIngredientData } from './index.js'
 import templateTableRecipeTbodyContent from './templates/tableRecipeTbodyContentTemplate.js'
+import { fetchData, postData } from './services/fetchData.js'
 
-let dataIngredients = {}
 let matchValue = false
-window.onload = () => {
+window.onload = async () => {
     const todayDate = document.querySelector('#today-date')
     todayDate.value = new Date().toLocaleDateString()
 
-    fetch('https://costos-backend.vercel.app/ingredients')
-        .then((res) => res.json())
-        .then((data) => {
-            dataIngredients = data
-            const lo = document.querySelector('#list-options-ingredient')
-            while (lo.hasChildNodes()) {
-                lo.removeChild(lo.firstChild)
-            }
+    window.dataIngredients = await fetchData('ingredients')
+    
+    const lo = document.querySelector('#list-options-ingredient')
+    while (lo.hasChildNodes()) {
+        lo.removeChild(lo.firstChild)
+    }
 
-            data.map((e) => {
-                let node = document.createElement('option')
-                //let input = document.querySelector('#ingredient')
-                node.value = capitalizeText(e.ingrediente)
-                node.onclick = `input.value=${capitalizeText(e.ingrediente)}`
-                lo.appendChild(node)
-            })
-        })
+    dataIngredients.map((e) => {
+        let node = document.createElement('option')
+        //let input = document.querySelector('#ingredient')
+        node.value = capitalizeText(e.ingrediente)
+        node.onclick = `input.value=${capitalizeText(e.ingrediente)}`
+        lo.appendChild(node)
+    })
     
     window.form = document.querySelector('#form')
     window.lo = document.querySelector('#list-options-ingredient')
@@ -142,11 +139,7 @@ const onsubmitNewRecipe = () => {
                     })
         }
 
-        fetch('https://costos-backend.vercel.app/addrecipe/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify(objRecipe)
-        })
+        postData(`addrecipe/`, objRecipe)
         .then(()=>{
             alert('Receta creada')  
             window.location.reload()      

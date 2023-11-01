@@ -1,8 +1,8 @@
 import { capitalizeText, findIngredientData } from '../js/index.js'
+import { fetchData, postData } from './services/fetchData.js'
 import templateTableRecipeTbodyContent from './templates/tableRecipeTbodyContentTemplate.js'
 
-let dataIngredients = null
-window.onload = () => {
+window.onload = async () => {
     new bootstrap.Modal(document.querySelector('#recipe-modal')).show()
     window.form = document.querySelector('#form')
     form.style.display = 'none'
@@ -15,11 +15,7 @@ window.onload = () => {
     window.codigo = document.querySelector('#_id')
     window.tableMainContainer = document.querySelector('#table-main-container')   
    
-    fetch('https://costos-backend.vercel.app/ingredients')
-    .then((res) => res.json())
-    .then((data) => {
-        dataIngredients = data
-    })      
+    window.dataIngredients = await fetchData('ingredients')
 }
 
 window.onInputEnableBtn = () => {
@@ -74,8 +70,7 @@ const addRowsToTable = async (data) => {
 }
 
 const selectedRow = (id) => { 
-    fetch(`https://costos-backend.vercel.app/recipes/_id/${id}`)
-    .then((res) => res.json())
+    fetchData(`recipes/_id/${id}`)
     .then((data)=>{
         recipeName.value = capitalizeText(data[0].nombre)
         category.value = capitalizeText(data[0].categoria)
@@ -129,11 +124,7 @@ const onsubmitModifiedRecipe = () => {
                     })
         }
 
-        fetch('https://costos-backend.vercel.app/updaterecipe/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify(objRecipe)
-        })
+        postData(`updaterecipe`, objRecipe)
         .then(()=>{
             alert('Receta modificada')
             window.location.reload()

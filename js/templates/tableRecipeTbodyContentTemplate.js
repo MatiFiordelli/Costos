@@ -26,7 +26,7 @@ const templateTableRecipeTbodyContent = async (config, objRow) => {
                 <input 
                     type="text" 
                     name="ingredient"
-                    class="ingredient form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none ${tableType==='list' ? ' recipe-list-input ' : ''}" 
+                    class="ingredient form-control w-auto border-0 bg-transparent text-black text-center rounded-0 shadow-none" 
                     placeholder="Nombre del ingrediente" 
                     required
                     readonly
@@ -52,7 +52,7 @@ const templateTableRecipeTbodyContent = async (config, objRow) => {
                 <input 
                     type="number" 
                     name="quantity"
-                    class="quantity form-control w-auto border-0 bg-transparent text-black text-center rounded-0 ${tableType==='list' ? ' recipe-list-input shadow-none ' : tableType==='add' ? ' shadow-none ' : ''}" 
+                    class="quantity form-control w-auto border-0 bg-transparent text-black text-center rounded-0 ${tableType==='list' ? ' shadow-none ' : tableType==='add' ? ' shadow-none ' : ''}" 
                     placeholder="0" 
                     step="any"
                     min="0"
@@ -67,7 +67,7 @@ const templateTableRecipeTbodyContent = async (config, objRow) => {
                 <input 
                     name="trademark"
                     type="text" 
-                    class="trademark form-control w-auto border-0 bg-transparent ${tableType==='modify' ? ' text-black-50' : 'text-black'} text-center rounded-0 shadow-none ${tableType==='list' ? ' recipe-list-input ' : ''}" 
+                    class="trademark form-control w-auto border-0 bg-transparent ${tableType==='modify' ? ' text-black-50' : 'text-black'} text-center rounded-0 shadow-none" 
                     placeholder="Marca" 
                     required
                     readonly
@@ -78,7 +78,7 @@ const templateTableRecipeTbodyContent = async (config, objRow) => {
                 <input 
                     type="number" 
                     name="price"
-                    class="price form-control w-auto border-0 bg-transparent ${tableType==='modify' ? ' text-black-50' : 'text-black'} text-center rounded-0 shadow-none ${tableType==='list' ? ' recipe-list-input ' : ''}" 
+                    class="price form-control w-auto border-0 bg-transparent ${tableType==='modify' ? ' text-black-50' : 'text-black'} text-center rounded-0 shadow-none" 
                     placeholder="0.00" 
                     required
                     readonly
@@ -89,7 +89,7 @@ const templateTableRecipeTbodyContent = async (config, objRow) => {
                 <input 
                     type="number" 
                     name="cost-value"
-                    class="cost-value form-control w-auto border-0 bg-transparent ${tableType==='modify' ? ' text-black-50' : 'text-black'} text-center rounded-0 shadow-none ${tableType==='list' ? ' recipe-list-input ' : ''}" 
+                    class="cost-value form-control w-auto border-0 bg-transparent ${tableType==='modify' ? ' text-black-50' : 'text-black'} text-center rounded-0 shadow-none" 
                     required
                     readonly
                     placeholder="Costo"
@@ -100,7 +100,7 @@ const templateTableRecipeTbodyContent = async (config, objRow) => {
                 <input 
                     type="text" 
                     name="measurement-unit"
-                    class="measurement-unit form-control w-auto border-0 bg-transparent ${tableType==='modify' ? ' text-black-50 fst-italic' : 'text-black'} text-center rounded-0 shadow-none ${tableType==='list' ? ' recipe-list-input ' : ''}" 
+                    class="measurement-unit form-control w-auto border-0 bg-transparent ${tableType==='modify' ? ' text-black-50 fst-italic' : 'text-black'} text-center rounded-0 shadow-none" 
                     required
                     readonly
                     placeholder="Unidad de medida"
@@ -112,7 +112,7 @@ const templateTableRecipeTbodyContent = async (config, objRow) => {
                 <input 
                     type="text" 
                     ${tableType==='modify' ? 'name="codigo"' : 'name="_id"'}
-                    class="${tableType==='modify' ? 'codigo text-black-50 fst-italic ' : '_id text-black'} form-control w-auto border-0 bg-transparent text-center rounded-0 shadow-none ${tableType==='list' ? ' recipe-list-input ' : ''}" 
+                    class="${tableType==='modify' ? 'codigo text-black-50 fst-italic ' : '_id text-black'} form-control w-auto border-0 bg-transparent text-center rounded-0 shadow-none" 
                     placeholder="0" 
                     aria-label="Codigo" 
                     required

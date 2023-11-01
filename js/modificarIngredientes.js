@@ -1,4 +1,5 @@
 import { capitalizeText } from './index.js'
+import { postData } from './services/fetchData.js'
 
 window.onload = () => {
     window.rowsObj = []
@@ -42,11 +43,7 @@ const onChangeValue = (rowNumber) => {
 
 const onsubmitModifiedIngredients = () => {
     if(form.checkValidity()){
-        fetch('https://costos-backend.vercel.app/updateingredients/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(rowsObj)
-        })
+        postData('updateingredients/', rowsObj)
         .then(()=>{
             alert('Ingredientes modificados')  
             window.location.reload()

@@ -12,7 +12,7 @@ const formRecipeMainInfo = async (config) => {
                     title="Nombre de la receta"
                     id="recipe-name"
                     name="recipe_name"
-                    class="${tableType==='list' ? 'recipe-list-input shadow-none' : ''} form-control form-control-sm rounded w-50 border-secondary-subtle" 
+                    class="${tableType==='list' ? ' shadow-none' : ''} form-control form-control-sm rounded w-50 border-secondary-subtle" 
                     placeholder="Pizza Fugazzeta, Empanadas Caprese, Sandwich de Milanesa.." 
                     required
                     ${tableType==='list' ? 'readonly' : ''}
@@ -26,7 +26,7 @@ const formRecipeMainInfo = async (config) => {
                     title="Categoria"
                     id="category"
                     name="category"
-                    class="recipe-list-input form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none" 
+                    class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none" 
                     placeholder="Almacen, Verduleria, Carniceria.." 
                     readonly
                 >
@@ -67,7 +67,7 @@ const formRecipeMainInfo = async (config) => {
                     title="${tableType==='add' ? 'Fecha de creacion' : 'Fecha de modificacion'}"
                     id="today-date"
                     name="today_date"
-                    class="${tableType==='list' ? 'recipe-list-input' : ''} form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none ${tableType!=='list' ? `fst-italic text-black-50`: ''}" 
+                    class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none ${tableType!=='list' ? `fst-italic text-black-50`: ''}" 
                     placeholder="dd/mm/aaaa" 
                     required
                     readonly
@@ -98,7 +98,7 @@ const formRecipeMainInfo = async (config) => {
                         title="Autor"
                         id="autor" 
                         name="autor" 
-                        class="${tableType==='list' ? 'recipe-list-input' : ''} form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none ${tableType==='add' ? 'fst-italic text-black-50': ''}" 
+                        class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none ${tableType==='add' ? 'fst-italic text-black-50': ''}" 
                         readonly
                         placeholder="Autor"
                         tabindex="-1"

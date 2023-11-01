@@ -37,10 +37,6 @@ menuTemplate.innerHTML = `
                     </div>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0 d-flex gap-2 align-items-center ">
-                <input class="form-control h-75 mr-sm-2" type="search" id="input-search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
         </div>
     </nav>
 `
