@@ -7,7 +7,7 @@ window.onload = async () => {
     window.form = document.querySelector('#form')
     window.dataIngredients = await fetchData('ingredients')
 
-    const res = document.querySelector('#resolution').innerHTML = window.innerWidth +', '+window.innerHeight
+    //const res = document.querySelector('#resolution').innerHTML = window.innerWidth +', '+window.innerHeight
 }
 
 const addRowsToTable = async (data) => {

@@ -1,10 +1,6 @@
 Errores:
 corregir id o class de codigo / _id y reemplazar por _id_recipe y _id_ingredient o algo asi
-ver bien bien las fechas!!!
 en todos los findIngredientData() creo q el if no deberia ser con ingrediente sino con codigo!!!
-la resolucion de mi celular tiene el font-size muy pequeño, ver el caso de 'fecha de creacion
-los id y name de la fecha en form, poner nombre adecuado, corregir
-
 
 Funcionalidades / Cambios:
 deberia tener un boton deshacer en modificar receta

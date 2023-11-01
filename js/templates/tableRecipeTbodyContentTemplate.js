@@ -88,7 +88,7 @@ const templateTableRecipeTbodyContent = async (config, objRow) => {
             <td scope="row" title="Costo">
                 <input 
                     type="number" 
-                    name="cost-value"
+                    name="cost_value"
                     class="cost-value form-control w-auto border-0 bg-transparent ${tableType==='modify' ? ' text-black-50' : 'text-black'} text-center rounded-0 shadow-none" 
                     required
                     readonly
@@ -99,7 +99,7 @@ const templateTableRecipeTbodyContent = async (config, objRow) => {
             <td scope="row" title="Unidad de medida">
                 <input 
                     type="text" 
-                    name="measurement-unit"
+                    name="measurement_unit"
                     class="measurement-unit form-control w-auto border-0 bg-transparent ${tableType==='modify' ? ' text-black-50 fst-italic' : 'text-black'} text-center rounded-0 shadow-none" 
                     required
                     readonly

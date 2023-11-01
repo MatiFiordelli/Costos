@@ -97,6 +97,7 @@ const onchangeAgregarRecetaCantidad = (e) => {
 
 const addRowToTable = async (e) => {
     e.preventDefault()
+    tableMainContainer.classList.remove('d-none')
     tableMainContainer.classList.add('d-flex')
     window.tableBody = document.querySelector('#table tbody')
     const btnSubmitRecipe = document.querySelector('#btn-submit-recipe')
