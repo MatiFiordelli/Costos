@@ -8,6 +8,7 @@ los id y name de la fecha en form, poner nombre adecuado, corregir
 
 Funcionalidades / Cambios:
 deberia tener un boton deshacer en modificar receta
+deberia haber un señalizador para la(s) fila(s) modificada(s) en ingredientes tipo pintar la fila
 corregir al ingles web y base de datos
 componentizar lo que falte
 hacer login para tener el autor

@@ -29,7 +29,7 @@ const onChangeValue = (rowNumber) => {
         precio: price[rowNumber].value,
         unidad_medida: measurementUnit[rowNumber].value,
         categoria: category[rowNumber].value,
-        ultima_modificacion: todayDate[rowNumber].value,
+        ultima_modificacion: new Date().toLocaleDateString(),
         autor: autor[rowNumber].innerHTML.trim(),
         _id: _id[rowNumber].innerHTML.trim(),
     }
