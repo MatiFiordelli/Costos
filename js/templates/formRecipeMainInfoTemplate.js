@@ -77,11 +77,11 @@ const formRecipeMainInfo = async (config) => {
             ${tableType==='modify' 
             ?`
                 <div class="container d-flex justify-content-between p-0 mb-1">
-                    <label for="_id" class="form-label text-black-50 fst-italic m-0 w-50 text-truncate my-auto text-start">Codigo</label>
+                    <label for="_id_recipe" class="form-label text-black-50 fst-italic m-0 w-50 text-truncate my-auto text-start">Codigo</label>
                     <input 
                         type="text" 
                         title="Codigo"
-                        id="_id"
+                        id="_id_recipe"
                         name="_id"
                         class="form-control form-control-sm rounded w-50 border-secondary-subtle shadow-none fst-italic text-black-50" 
                         placeholder="Codigo" 

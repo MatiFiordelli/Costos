@@ -22,6 +22,7 @@ export const capitalizeText = (text) => {
 export const findIngredientData = (dataIngredients, codigo, quantity) => {
     const msg = 'No encontrado'
     let _id = msg
+    let ingredient = msg
     let trademark = msg
     let price = msg
     let costValue = msg
@@ -31,6 +32,7 @@ export const findIngredientData = (dataIngredients, codigo, quantity) => {
 
     dataIngredients.some((e, i)=>{
         if(e._id===codigo) {
+            ingredient = dataIngredients[i].ingrediente
             _id = dataIngredients[i]._id
             trademark = dataIngredients[i].marca
             price = dataIngredients[i].precio
@@ -41,6 +43,7 @@ export const findIngredientData = (dataIngredients, codigo, quantity) => {
         }
     })
     return {
+        ingredient: ingredient,
         _id: _id,
         trademark: trademark,
         price: price,

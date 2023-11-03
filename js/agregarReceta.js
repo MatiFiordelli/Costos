@@ -33,7 +33,7 @@ window.onload = async () => {
     window.inputCostValue = document.querySelector('#cost-value')
     window.inputPrice = document.querySelector('#price')
     window.inputMU = document.querySelector('#measurement-unit')
-    window.input_ID = document.querySelector('#_id')
+    window.input_ID = document.querySelector('#_id_ingredient')
     window.btnAddIngredient = document.querySelector('#btn-add-ingredient')
     window.tableMainContainer = document.querySelector('#table-main-container')
     tableMainContainer.style.display = 'none' 
@@ -124,7 +124,7 @@ const onsubmitNewRecipe = () => {
        
         const inputIngredientArray = document.querySelectorAll('.ingredient')
         const inputQuantityArray = document.querySelectorAll('.quantity')
-        const inputIDArray = document.querySelectorAll('._id')
+        const inputIDArray = document.querySelectorAll('._id_ingredient')
 
         const objRecipe = {
             autor: inputAutor.value,

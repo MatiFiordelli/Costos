@@ -12,7 +12,7 @@ window.onload = async () => {
     recipeName.oninput = ()=> onInputEnableBtn()
     window.category = document.querySelector('#category')
     category.onchange = ()=> onInputEnableBtn()
-    window.codigo = document.querySelector('#_id')
+    window.codigo = document.querySelector('#_id_recipe')
     window.tableMainContainer = document.querySelector('#table-main-container')   
    
     window.dataIngredients = await fetchData('ingredients')
@@ -23,7 +23,7 @@ window.onInputEnableBtn = () => {
     if(btnSubmitRecipe.disabled) btnSubmitRecipe.disabled = false
 }
 
-const updateMeasurementUnitSelect = (e) => {
+const updateDataOnChangeIngredient = (e) => {
     onInputEnableBtn()
     const ingredient = e.closest('tr').querySelectorAll('.ingredient')[0]
     const quantity = e.closest('tr').querySelectorAll('.quantity')[0]
@@ -31,7 +31,7 @@ const updateMeasurementUnitSelect = (e) => {
     const price = e.closest('tr').querySelectorAll('.price')[0]
     const cost_value = e.closest('tr').querySelectorAll('.cost-value')[0]
     const measurementUnit = e.closest('tr').querySelectorAll('.measurement-unit')[0]
-    const codigo = e.closest('tr').querySelectorAll('.codigo')[0]
+    const codigo = e.closest('tr').querySelectorAll('._id_ingredient')[0]
     const ingredientData = findIngredientData(dataIngredients, e.value, quantity.value)
 
     trademark.value = capitalizeText(ingredientData.trademark)
@@ -108,22 +108,24 @@ const onsubmitModifiedRecipe = () => {
        
         const inputIngredientArray = document.querySelectorAll('.ingredient')
         const inputQuantityArray = document.querySelectorAll('.quantity')
-        const inputIdIngredientArray = document.querySelectorAll('.codigo')
+        const inputIdIngredientArray = document.querySelectorAll('._id_ingredient')
 
         const objRecipe = {
             nombre: recipeName.value,
-            ultima_modificacion: todayDate.value,
+            ultima_modificacion: new Date().toLocaleDateString(),
             categoria: category.value,
             codigo: codigo.value,
             receta: Array.from(inputIngredientArray).map((e, i)=> {
+                        const ingredientData = findIngredientData(dataIngredients, inputIdIngredientArray[i].value, null)
+                        
                         return {
                             codigo: inputIdIngredientArray[i].value,
-                            ingrediente: inputIngredientArray[i].value,
+                            ingrediente: ingredientData.ingredient,
                             cantidad: inputQuantityArray[i].value,
                         }
                     })
         }
-
+        
         postData(`updaterecipe`, objRecipe)
         .then(()=>{
             alert('Receta modificada')
@@ -139,4 +141,4 @@ window.selectedRow = selectedRow
 window.addNewIngredient = addNewIngredient
 window.onsubmitModifiedRecipe = onsubmitModifiedRecipe
 //window.findIngredientData = findIngredientData
-window.updateMeasurementUnitSelect = updateMeasurementUnitSelect
+window.updateDataOnChangeIngredient = updateDataOnChangeIngredient

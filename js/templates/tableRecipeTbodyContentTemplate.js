@@ -41,7 +41,7 @@ const templateTableRecipeTbodyContent = async (config, objRow) => {
                     placeholder="Elija el ingrediente" 
                     required
                     data-ingredient="${objRow.ingredient}"
-                    onchange="updateMeasurementUnitSelect(this)"
+                    onchange="updateDataOnChangeIngredient(this)"
                 > 
                     <option value="${objRow._id}">${objRow.ingredient}</option>
                 </select>`
@@ -112,7 +112,7 @@ const templateTableRecipeTbodyContent = async (config, objRow) => {
                 <input 
                     type="text" 
                     ${tableType==='modify' ? 'name="codigo"' : 'name="_id"'}
-                    class="${tableType==='modify' ? 'codigo text-black-50 fst-italic ' : '_id text-black'} form-control w-auto border-0 bg-transparent text-center rounded-0 shadow-none" 
+                    class="${tableType==='modify' ? ' text-black-50 fst-italic ' : ' text-black'} _id_ingredient form-control w-auto border-0 bg-transparent text-center rounded-0 shadow-none" 
                     placeholder="0" 
                     aria-label="Codigo" 
                     required
