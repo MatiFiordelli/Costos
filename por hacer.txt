@@ -3,8 +3,5 @@ corregir al ingles web y base de datos
 
 Funcionalidades / Cambios:
 deberia tener un boton deshacer en modificar receta
-deberia haber un señalizador para la(s) fila(s) modificada(s) en ingredientes tipo pintar la fila
-componentizar lo que falte
 hacer login para tener el autor
-poner spinners
 hacer infinite scroll

@@ -1,4 +1,5 @@
 import templateTableIngredients from '../templates/tableIngredientsTemplate.js'
+import templateSpinner from '../templates/spinnerTemplate.js'
 
 export default class TableIngredients extends HTMLElement{
     constructor(){
@@ -6,13 +7,17 @@ export default class TableIngredients extends HTMLElement{
     }
     
     connectedCallback(){
-
+        
     } 
 
     async attributeChangedCallback(name, oldValue, newValue){
         if(name==='config'){
+            this.appendChild(templateSpinner().content.cloneNode(true))
+            
             const f = templateTableIngredients(newValue)
-            f.then((res)=>{this.appendChild(res.content.cloneNode(true))})       
+            f.then((res)=>{
+                this.replaceChild(res.content.cloneNode(true), this.childNodes[1])
+            })       
         }
     }
 

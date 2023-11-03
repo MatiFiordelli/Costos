@@ -4,7 +4,7 @@ const templateTableRecipeTbodyContent = async (config, objRow) => {
     const tableType = config
 
     tableRecipeTbodyContent.innerHTML = `
-        <tr>
+        <tr oninput="this.classList.add('table-primary')">
             ${tableType!=='list' ? 
             `<td scope="row">
                 <button 

@@ -48,7 +48,7 @@ const templateTableIngredients = async (config) => {
                         <tbody>
                         
                         ${res.map((e, i)=>`
-                            <tr>
+                            <tr oninput="this.classList.add('table-primary')">
                                 <td style="display:${displayValue}">
                                     <button 
                                         class="btn btn-dark btn-sm mx-auto" style="display:${displayValue}"

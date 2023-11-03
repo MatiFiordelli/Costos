@@ -140,5 +140,4 @@ const onsubmitModifiedRecipe = () => {
 window.selectedRow = selectedRow
 window.addNewIngredient = addNewIngredient
 window.onsubmitModifiedRecipe = onsubmitModifiedRecipe
-//window.findIngredientData = findIngredientData
 window.updateDataOnChangeIngredient = updateDataOnChangeIngredient
