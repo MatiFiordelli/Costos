@@ -127,9 +127,11 @@ const onsubmitModifiedRecipe = () => {
         }
         
         postData(`updaterecipe`, objRecipe)
-        .then(()=>{
-            alert('Receta modificada')
-            window.location.reload()
+        .then((res)=>{
+            if(!res){
+                alert('Receta modificada')
+                window.location.reload()
+            }
         })
         .catch((err)=>console.log(err))
     }else{

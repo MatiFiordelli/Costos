@@ -1,14 +1,20 @@
 const fetchToDelete = async (url, _id) => {
-    try {
-        fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ '_id': _id })
-        })
-        return true
-    } catch (err) {
-        return console.log(err)
-    }
+    return fetch(url, {
+        method: 'POST',
+        headers: { 
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}` },
+        body: JSON.stringify({ '_id': _id })
+    })
+    .then((res)=>res.json())
+    .then((err)=>{
+        if(err.message!== 'OK'){
+            alert(err.message)
+            return true
+        }
+        alert('Registro eliminado exitosamente')
+        return false
+    })
 }
 
 async function removeRow(e, origin, _id) {
@@ -20,15 +26,13 @@ async function removeRow(e, origin, _id) {
 
         if (origin === 'recipe') {
             const url = 'https://costos-backend.vercel.app/deleterecipe/'
-            await fetchToDelete(url, _id) 
-                ? t.deleteRow(i)
-                : alert('Ocurrió un error, no se pudo eliminar el producto')
+            //const url = 'http://localhost:3001/deleterecipe/'
+            !(await fetchToDelete(url, _id)) && t.deleteRow(i)
         }
         if (origin === 'ingredient') {
             const url = 'https://costos-backend.vercel.app/deleteingredient/'
-            await fetchToDelete(url, _id) 
-                ? t.deleteRow(i)
-                : alert('Ocurrió un error, no se pudo eliminar el producto')
+            //const url = 'http://localhost:3001/deleteingredient/'
+            !(await fetchToDelete(url, _id)) && t.deleteRow(i)
         }
         if(origin === 'function in modificaReceta') {
             const thisIsTheFunction_onInputEnableBtn = _id

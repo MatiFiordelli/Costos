@@ -1,4 +1,6 @@
 const menuTemplate = document.createElement('template')
+let userName = sessionStorage.getItem('user-name')
+!userName && (userName='Visitante')
 
 menuTemplate.innerHTML = `
     <nav class="menu-bar navbar navbar-expand-lg navbar-dark bg-dark ps-5">
@@ -34,6 +36,23 @@ menuTemplate.innerHTML = `
                         <a class="dropdown-item" href="./eliminarRecetas.html">Eliminar</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="./listaRecetas.html">Ver lista completa</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Usuario
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <small><a class="dropdown-item">Hola ${userName}!</a></small>
+                        <a class="dropdown-item" href="./login.html" data-bs-toggle="modal">Login</a>
+                        <a class="dropdown-item" href="" onmouseup="
+                                                                    sessionStorage.removeItem('token');
+                                                                    sessionStorage.removeItem('user-name');
+                                                                    alert('Cerraste sesion exitosamente');
+                                                                    "
+                        >
+                            Logout
+                        </a>
                     </div>
                 </li>
             </ul>

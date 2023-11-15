@@ -1,8 +1,7 @@
-import { capitalizeText } from './index.js'
 import { postData } from './services/fetchData.js'
 
 window.onload = () => {
-    window.rowsObj = []
+    window.objIngredient = []
 }
 
 const onInputEnableBtn = () => {
@@ -21,7 +20,7 @@ const onChangeValue = (rowNumber) => {
     const _id = document.querySelectorAll('._id')
 
     const id = _id[rowNumber].innerHTML.trim()
-    const existId = rowsObj.findIndex((p)=>p._id === id)
+    const existId = objIngredient.findIndex((p)=>p._id === id)
 
     const obj = {
         ingrediente: ingredient[rowNumber].value,
@@ -35,18 +34,20 @@ const onChangeValue = (rowNumber) => {
     }
 
     if(existId === -1){
-        rowsObj.push(obj)
+        objIngredient.push(obj)
     }else{
-        rowsObj[existId] = obj
+        objIngredient[existId] = obj
     }
 }
 
 const onsubmitModifiedIngredients = () => {
     if(form.checkValidity()){
-        postData('updateingredients/', rowsObj)
-        .then(()=>{
-            alert('Ingredientes modificados')  
-            window.location.reload()
+        postData('updateingredients/', objIngredient)
+        .then((res)=>{
+            if(!res){
+                alert('Ingredientes modificados')  
+                window.location.reload()
+            }
         })
         .catch((err)=>{ console.log(err) })
 

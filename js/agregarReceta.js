@@ -38,7 +38,10 @@ window.onload = async () => {
     window.tableMainContainer = document.querySelector('#table-main-container')
     tableMainContainer.style.display = 'none' 
     window.autor = document.querySelector('#autor')
-    autor.value = capitalizeText('matias')
+    let user = sessionStorage.getItem('user-name')
+    !user && (user='Visitante')
+    autor.value = capitalizeText(user)
+
     matchValue = false
 }
 
@@ -119,7 +122,7 @@ const addRowToTable = async (e) => {
     initElementsValues(true)
 }
 
-const onsubmitNewRecipe = () => {
+const onsubmitNewRecipe = async() => {
     if(form.checkValidity()){
        
         const inputIngredientArray = document.querySelectorAll('.ingredient')
@@ -141,9 +144,11 @@ const onsubmitNewRecipe = () => {
         }
 
         postData(`addrecipe/`, objRecipe)
-        .then(()=>{
-            alert('Receta creada')  
-            window.location.reload()      
+        .then((res)=>{
+            if(!res){
+                alert('Receta creada')  
+                window.location.reload()
+            }
         })
         .catch((err)=>console.log(err))
     }else{

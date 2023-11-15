@@ -5,10 +5,12 @@ window.onload = () => {
     const todayDate = document.querySelector('#today-date')
     todayDate.value = new Date().toLocaleDateString()
     const autor = document.querySelector('#autor')
-    autor.value = capitalizeText('matias')
+    let user = sessionStorage.getItem('user-name')
+    !user && (user='Visitante')
+    autor.value = capitalizeText(user)
 }
 
-const onsubmitNewIngredient = () => {
+const onsubmitNewIngredient = async() => {
     const form = document.querySelector('#form')
     if(form.checkValidity()){
         const ingredient = document.querySelector('#ingredient')
@@ -30,9 +32,11 @@ const onsubmitNewIngredient = () => {
         }
         
         postData('addingredient/', objRecipe)
-        .then(()=>{
-            alert('Ingrediente agregado')
-            window.location.reload()
+        .then((res)=>{
+            if(!res){
+                alert('Ingrediente agregado')
+                window.location.reload()
+            }
         })
         .catch((err)=>console.log(err))
 
