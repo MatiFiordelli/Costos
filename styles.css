@@ -35,16 +35,16 @@ body > section .modal-content {
   }
 }
 @media only screen and (max-width: 1199.98px) {
-  body > section.p-5, body > section {
-    /* & .modal-content{
-        max-width: 95%;
-    } */
-  }
   body > section.p-5.p-5, body > section.p-5 {
     padding: 9px !important;
   }
   body > section.p-5 div:first-child:not(.modal-content), body > section div:first-child:not(.modal-content) {
     max-width: 100%;
+  }
+}
+@media only screen and (min-width: 767.99px) {
+  section .form-login {
+    width: 50vw;
   }
 }
 @media only screen and (max-width: 767.98px) {
@@ -68,14 +68,8 @@ body > section .modal-content {
     padding: 10px !important;
     margin: 0 !important;
   }
-  body form {
-    padding: 10px !important;
-  }
   body form > div {
     flex-direction: column;
-    /* & div{
-        margin-bottom:5px;
-    } */
   }
   body form > div .label {
     margin: 5px;
@@ -97,37 +91,40 @@ body > section .modal-content {
   body > section > div.p-5 {
     padding: 5px !important;
   }
-  body form {
+  body form, body form-recipe-main-info {
     margin: 0 !important;
     padding: 0 !important;
   }
-  body form > div {
+  body form > div, body form-recipe-main-info > div {
     flex-direction: column;
   }
-  body form > div.border {
+  body form > div.border, body form-recipe-main-info > div.border {
     border: none !important;
   }
-  body form > div.p-5 {
+  body form > div.p-5, body form-recipe-main-info > div.p-5 {
     padding: 1px !important;
   }
-  body form > div > div {
+  body form > div > div, body form-recipe-main-info > div > div {
     margin-bottom: 5px;
   }
-  body form > div > div.d-flex {
+  body form > div > div.d-flex, body form-recipe-main-info > div > div.d-flex {
     display: flex !important;
     flex-direction: column;
   }
-  body form > div > div > div.d-flex {
+  body form > div > div > div.d-flex, body form-recipe-main-info > div > div > div.d-flex {
     display: flex !important;
     flex-direction: row;
   }
-  body form > div > div > div span {
+  body form > div > div > div span, body form-recipe-main-info > div > div > div span {
     width: auto !important;
   }
-  body form > div > div .w-50 {
+  body form > div > div .w-50, body form-recipe-main-info > div > div .w-50 {
     width: 100% !important;
   }
-  body form label {
+  body form #ingredient-recipe-box, body form-recipe-main-info #ingredient-recipe-box {
+    margin-top: 43px !important;
+  }
+  body form label, body form-recipe-main-info label {
     margin: 5px 3px 3px !important;
     text-align: start;
   }

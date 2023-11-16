@@ -51,10 +51,16 @@ body{
             & div:first-child:not(.modal-content){
                 max-width: 100%;
             }
-            /* & .modal-content{
-                max-width: 95%;
-            } */
         }    
+    }
+}
+
+@media only screen and (min-width:767.99px){
+    
+    section{
+        & .form-login{
+            width:50vw;
+        }
     }
 }
 
@@ -86,7 +92,6 @@ body{
         }   
         
         form{
-            padding:10px !important;
     
             &>div{
                 flex-direction: column;
@@ -94,10 +99,6 @@ body{
                 & .label{
                     margin:5px;
                 }
-    
-                /* & div{
-                    margin-bottom:5px;
-                } */
             }
         }
     }
@@ -127,10 +128,10 @@ body{
                 }
             }
         }
-        form{
+        form, form-recipe-main-info{
             margin:0 !important;
             padding:0 !important;
-    
+
             &>div{
                 flex-direction: column;
 
@@ -166,12 +167,15 @@ body{
                 }
             }
 
+            & #ingredient-recipe-box{
+                margin-top:43px !important;
+            }
+
             & label{
                 margin:5px 3px 3px !important;
                 text-align: start;
             }
         }
-    }
-    
+    }    
 }
 
