@@ -3,5 +3,4 @@ corregir al ingles web y base de datos
 
 Funcionalidades / Cambios:
 deberia tener un boton deshacer en modificar receta
-hacer login para tener el autor
 hacer infinite scroll
