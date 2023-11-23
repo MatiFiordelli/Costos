@@ -1,4 +1,5 @@
-import menuTemplate from '../templates/menuTemplate.js'
+import { templateMenu } from '../templates/menuTemplate.js'
+
 
 export default class MenuSection extends HTMLElement{
     constructor(){
@@ -6,7 +7,17 @@ export default class MenuSection extends HTMLElement{
     }
 
     connectedCallback(){
-        this.appendChild(menuTemplate.content.cloneNode(true))
+        templateMenu().then((res)=>{
+            this.appendChild(res.content.cloneNode(true))                     
+        })        
+    }
+
+    async attributeChangedCallback(name, oldValue, newValue){
+        
+    }
+
+    static get observedAttributes(){
+        return ['config']
     }
 }
 
