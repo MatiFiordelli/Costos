@@ -84,7 +84,7 @@ export const search = async(queryType, query, page, amount) => {
         }
     }`
     
-    return fetch('https://costos-backend-graph-ql.vercel.app/',{
+    return fetch('https://costos-backend-graphql.vercel.app/',{
     //return fetch('http://localhost:4000/',{
         method: 'POST',
         headers: {
