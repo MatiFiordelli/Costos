@@ -16,10 +16,10 @@ const templateMenu = async () => {
                         <a class="nav-link" href="./">Inicio </a>
                     </li>
                     <li class="nav-item dropdown my-auto">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Ingredientes
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                             <a class="dropdown-item" href="./agregarIngredientes.html">Agregar</a>
                             <a class="dropdown-item" href="./modificarIngredientes.html">Modificar</a>
                             <a class="dropdown-item" href="./eliminarIngredientes.html">Eliminar</a>
@@ -28,10 +28,10 @@ const templateMenu = async () => {
                         </div>
                     </li>
                     <li class="nav-item dropdown my-auto">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Recetas
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                             <a class="dropdown-item" href="./agregarReceta.html" data-bs-toggle="modal">Agregar</a>
                             <a class="dropdown-item" href="./modificarReceta.html">Modificar</a>
                             <a class="dropdown-item" href="./eliminarRecetas.html">Eliminar</a>
@@ -40,13 +40,13 @@ const templateMenu = async () => {
                         </div>
                     </li>
                     <li class="nav-item dropdown my-auto">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Usuario
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <small><a class="dropdown-item">Hola ${userName}!</a></small>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                            <small><p class="dropdown-item fst-italic">Hola ${userName}!</p></small>
                             <a class="dropdown-item" href="./login.html" data-bs-toggle="modal">Login</a>
-                            <a class="dropdown-item" href="" onmouseup="
+                            <a class="dropdown-item" href="/" onmouseup="
                                                                         sessionStorage.removeItem('token');
                                                                         sessionStorage.removeItem('user-name');
                                                                         alert('Cerraste sesion exitosamente');
@@ -62,6 +62,7 @@ const templateMenu = async () => {
                             onsubmit="return false"
                         >
                             <input 
+                                id="search"
                                 class="form-control form-control-sm mr-sm-2" 
                                 type="search" 
                                 placeholder="Search" 
