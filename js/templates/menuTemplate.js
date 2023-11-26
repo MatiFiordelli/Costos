@@ -25,6 +25,7 @@ const templateMenu = async () => {
                             <a class="dropdown-item" href="./eliminarIngredientes.html">Eliminar</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="./listaIngredientes.html">Ver lista completa</a>
+                            <a class="dropdown-item" href="./chart.html">Ver gráfico de barras</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown my-auto">
@@ -68,6 +69,7 @@ const templateMenu = async () => {
                                 placeholder="Search" 
                                 aria-label="Search" 
                                 style="height: 2rem"
+                                onkeyup="event.key==='Enter' ? location.assign('../../search.html?inputTerms='  +  this.value + '&queryType=' + this.nextElementSibling.value) : null"
                             >
                             <select 
                                 id="queryType" 
